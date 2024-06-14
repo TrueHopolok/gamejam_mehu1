@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://doajomlg0qon4"]
+
+[ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_2h50g"]
+[ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player.tscn" id="2_1yr1c"]
+[ext_resource type="PackedScene" uid="uid://bb1jp3uunya1q" path="res://scenes/fish.tscn" id="3_q12r3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_2h50g")]
+
+[node name="Player" parent="." instance=ExtResource("2_1yr1c")]
+z_index = 1
+position = Vector2(160, 96)
+
+[node name="Fish" parent="." instance=ExtResource("3_q12r3")]
+position = Vector2(264, 72)

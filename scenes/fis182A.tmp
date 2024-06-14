@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb1jp3uunya1q"]
+
+[ext_resource type="Script" path="res://scripts/fish.gd" id="1_4dwy6"]
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="2_qxkfg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mca4b"]
+size = Vector2(16, 16)
+
+[node name="Fish" type="Node2D"]
+script = ExtResource("1_4dwy6")
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource("RectangleShape2D_mca4b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qxkfg")
