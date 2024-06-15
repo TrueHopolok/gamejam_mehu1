@@ -26,6 +26,7 @@ class_name Player extends Node2D
 
 @onready var dmg_collider : CollisionShape2D = $PlayerDmgArea/PlayerDmgBox
 @onready var hurt_area : Area2D = $HurtArea
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var velocity : Vector2
 var prev_direction : int = 1
@@ -102,10 +103,10 @@ func _physics_process(_delta):
 		
 	get_input()
 	if velocity.length_squared() == 0:
-		# ANIMATION: play idle animtion
+		animated_sprite_2d.play("idle")
 		pass
 	else:
-		# ANIMATION: play running animation
+		animated_sprite_2d.play("run")
 		pass
 	global_position.x = clampf(global_position.x + velocity.x, border_left, border_right)
 	global_position.y = clampf(global_position.y + velocity.y, border_top, border_bottom)

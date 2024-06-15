@@ -1,7 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8go5ghc6hwd2"]
+[gd_scene load_steps=10 format=3 uid="uid://b8go5ghc6hwd2"]
 
-[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="1_ow8cl"]
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_q11t2"]
+[ext_resource type="Texture2D" uid="uid://ba3aiq5tgmnpe" path="res://textures/UI/Background_ocean.png" id="2_5gvtn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2chai"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(0, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a2j2"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(320, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8cp27"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(640, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mc5dx"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(960, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ryxw"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(1280, 0, 320, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oawr"]
+atlas = ExtResource("2_5gvtn")
+region = Rect2(1600, 0, 320, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhfy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2chai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a2j2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8cp27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mc5dx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ryxw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oawr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="Background" type="ParallaxBackground"]
 script = ExtResource("1_q11t2")
@@ -10,7 +60,7 @@ script = ExtResource("1_q11t2")
 motion_scale = Vector2(0.35, 0.35)
 motion_mirroring = Vector2(320, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-position = Vector2(160, 90)
-texture = ExtResource("1_ow8cl")
-region_rect = Rect2(100, 100, 100, 100)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxLayer"]
+position = Vector2(160, 91)
+sprite_frames = SubResource("SpriteFrames_fhfy0")
+autoplay = "default"
