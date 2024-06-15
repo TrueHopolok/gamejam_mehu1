@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccxsax6vcf8qa"]
+
+[ext_resource type="Script" path="res://scripts/raft.gd" id="1_jy2dn"]
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="2_6i3jv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
+size = Vector2(16, 16)
+
+[node name="Raft" type="Node2D"]
+script = ExtResource("1_jy2dn")
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource("RectangleShape2D_imlpb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6i3jv")

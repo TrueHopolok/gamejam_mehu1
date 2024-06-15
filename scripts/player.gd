@@ -1,9 +1,9 @@
 class_name Player extends Node2D
 
 @export_subgroup("Weapon Properties")
-@export var damage : float = 1
-@export var current_range : float = 1.5
-@export var durability : int = 1
+@export var damage : float = 0.5
+@export var current_range : float = 1
+@export var durability : int = 0
 
 @export_subgroup("Game Area Borders")
 @export var border_top : int = 12
@@ -26,6 +26,7 @@ class_name Player extends Node2D
 
 @onready var dmg_collider : CollisionShape2D = $PlayerDmgArea/PlayerDmgBox
 @onready var hurt_area : Area2D = $HurtArea
+
 var velocity : Vector2
 var prev_direction : int = 1
 var health : float = 0
@@ -38,12 +39,15 @@ func get_input():
 	velocity = input_direction * speed
 
 func die():
+	# ANIMATION: play death animation and end game
+	Global.end_game()
 	queue_free()
 
 func injured(area : Area2D):
 	if invincability_time > regen_time - current_regen:
 		return
 	if area.name == "DmgArea":
+		# ANIMATION: play damage animation (make player red)
 		health -= 1.0
 		current_regen = regen_time
 		if health <= 0.0: die()
@@ -51,6 +55,7 @@ func injured(area : Area2D):
 func attack_start():
 	dmg_collider.scale = Vector2(current_range, 1)
 	if current_reload <= 0:
+		# ANIMATION: play attack animation (priority over walking? maybe white slash instead)
 		durability -= 1
 		dmg_collider.disabled = false
 		current_reload = reload_time
@@ -83,6 +88,7 @@ func _physics_process(_delta):
 	if health < max_health:
 		current_regen -= 1
 		if current_regen <= 0:
+			# ANIMATION: play healing animation (make him green)
 			health += 1
 			current_regen = regen_time
 			
@@ -95,5 +101,11 @@ func _physics_process(_delta):
 		apply_scale(Vector2(-1, 1))
 		
 	get_input()
+	if velocity.length_squared() == 0:
+		# ANIMATION: play idle animtion
+		pass
+	else:
+		# ANIMATION: play running animation
+		pass
 	global_position.x = clampf(global_position.x + velocity.x, border_left, border_right)
 	global_position.y = clampf(global_position.y + velocity.y, border_top, border_bottom)

@@ -1,5 +1,7 @@
 class_name Fish extends Node2D
 
+signal died
+
 @export_subgroup("Health Properties")
 @export var max_health : float = 5
 @export var hp_increase : float = 1.5
@@ -16,11 +18,12 @@ class_name Fish extends Node2D
 @onready var dmg_collider : CollisionShape2D = $DmgArea/DmgBox
 @onready var hurt_area : Area2D = $HurtArea
 @onready var health_bar : ProgressBar = $HealthBar
+
 var current_reload : int = 0
 var target : Node2D = null
 var prev_direction : int = 1
 var velocity : Vector2
-var attackable_objects : Array = [Player]
+var attackable_objects : Array = [Player, Raft]
 var health : float = 0
 
 func find_target():
@@ -35,6 +38,7 @@ func find_target():
 
 func attack_start():
 	if current_reload <= 0:
+		# ANIMATION: attack
 		dmg_collider.disabled = false
 		current_reload = reload_time
 	elif current_reload < reload_time >> 1:
@@ -46,6 +50,8 @@ func attack_stop():
 	current_reload = 0
 
 func die():
+	# ANIMATION: death
+	died.emit()
 	queue_free()
 
 func injured(area : Area2D):
@@ -62,9 +68,9 @@ func _ready():
 	if prev_direction == 1: health_bar.fill_mode = ProgressBar.FILL_BEGIN_TO_END
 	else: health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 	hurt_area.area_entered.connect(injured)
-	if int(Global.wave / 5)  != 0:
-		max_health += 0.5 * pow(hp_increase, int(Global.wave / 5) - 1) 
-		damage += 0.5 * pow(dmg_increase, int(Global.wave / 5) - 1) 
+	if int(Global.info_wave / 5)  != 0:
+		max_health += 0.5 * pow(hp_increase, int(Global.info_wave / 5) - 1) 
+		damage += 0.5 * pow(dmg_increase, int(Global.info_wave / 5) - 1) 
 	health = max_health
 
 func _physics_process(_delta):
@@ -80,6 +86,7 @@ func _physics_process(_delta):
 		else: health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 		
 	if global_position.distance_squared_to(target.global_position) > int(min_distance * min_distance):
+		# ANIMATION: move
 		attack_stop()
 		global_position.x = global_position.x + velocity.x
 		global_position.y = global_position.y + velocity.y

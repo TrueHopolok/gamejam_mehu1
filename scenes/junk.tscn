@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxyxi3scmnmd1"]
+
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="1_eevej"]
+[ext_resource type="Script" path="res://scripts/junk.gd" id="1_ehcwj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6gww"]
+size = Vector2(16, 16)
+
+[node name="Junk" type="Node2D"]
+script = ExtResource("1_ehcwj")
+
+[node name="CatchableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CatchableBox" type="CollisionShape2D" parent="CatchableArea"]
+shape = SubResource("RectangleShape2D_a6gww")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_eevej")

@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfysvgiocjmd5"]
+
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="1_u5ea0"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_wofq0"]
+[ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_6foxy"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_wofq0")
+
+[node name="FishingIcon" type="TextureRect" parent="."]
+offset_left = 280.0
+offset_top = 8.0
+offset_right = 312.0
+offset_bottom = 40.0
+texture = ExtResource("1_u5ea0")
+
+[node name="BorderIcon" type="TextureRect" parent="FishingIcon"]
+show_behind_parent = true
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u5ea0")
+metadata/_edit_lock_ = true
+
+[node name="WeaponIcon" type="TextureRect" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u5ea0")
+
+[node name="BorderIcon" type="TextureRect" parent="WeaponIcon"]
+show_behind_parent = true
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_u5ea0")
+metadata/_edit_lock_ = true
+
+[node name="Wood" type="TextureRect" parent="."]
+offset_top = 48.0
+offset_right = 16.0
+offset_bottom = 64.0
+texture = ExtResource("1_u5ea0")
+
+[node name="Amount" type="Label" parent="Wood"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 96.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+text = "x0"
+vertical_alignment = 1
+
+[node name="Rope" type="TextureRect" parent="."]
+offset_top = 64.0
+offset_right = 16.0
+offset_bottom = 80.0
+texture = ExtResource("1_u5ea0")
+
+[node name="Amount" type="Label" parent="Rope"]
+offset_left = 16.0
+offset_right = 96.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+text = "x0"
+vertical_alignment = 1
+
+[node name="Metal" type="TextureRect" parent="."]
+offset_top = 80.0
+offset_right = 16.0
+offset_bottom = 96.0
+texture = ExtResource("1_u5ea0")
+
+[node name="Amount" type="Label" parent="Metal"]
+offset_left = 16.0
+offset_right = 96.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+text = "x0"
+vertical_alignment = 1
+
+[node name="Fish" type="TextureRect" parent="."]
+offset_top = 96.0
+offset_right = 16.0
+offset_bottom = 112.0
+texture = ExtResource("1_u5ea0")
+
+[node name="Amount" type="Label" parent="Fish"]
+offset_left = 16.0
+offset_right = 96.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+text = "x0"
+vertical_alignment = 1
+
+[node name="CraftingButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 48.0
+offset_right = 320.0
+offset_bottom = 64.0
+theme = ExtResource("2_6foxy")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TreeButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 80.0
+theme = ExtResource("2_6foxy")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="BookButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 96.0
+theme = ExtResource("2_6foxy")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
