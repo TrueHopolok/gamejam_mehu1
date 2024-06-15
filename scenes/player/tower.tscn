@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dtfvx6n84gkqv"]
 
-[ext_resource type="Script" path="res://scripts/tower.gd" id="1_a2nlh"]
-[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="1_vl2fn"]
-[ext_resource type="PackedScene" uid="uid://bmka86r5mwrqj" path="res://scenes/projectile.tscn" id="2_80p01"]
+[ext_resource type="Script" path="res://scripts/player/tower.gd" id="1_a2nlh"]
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://textures/error.png" id="1_vl2fn"]
+[ext_resource type="PackedScene" uid="uid://bmka86r5mwrqj" path="res://scenes/player/projectile.tscn" id="2_80p01"]
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_a2nlh")

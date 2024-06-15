@@ -9,11 +9,12 @@ signal died
 @export_subgroup("Attack Properties")
 @export var damage : float = 1
 @export var dmg_increase : float = 1.3
-@export var reload_time : int = 20
+@export var attack_reload : int = 30
 
 @export_subgroup("Extra Properties")
 @export var min_distance : float = 10
 @export var speed : float = 0.5
+@export var prize : Array[int] = [0, 0, 0, 1]
 
 @onready var dmg_collider : CollisionShape2D = $DmgArea/DmgBox
 @onready var hurt_area : Area2D = $HurtArea
@@ -37,18 +38,11 @@ func find_target():
 						global_position.distance_squared_to(element.global_position):
 						target = element
 
-func attack_start():
+func attack():
 	if current_reload <= 0:
 		animated_sprite_2d.play("attack")
 		dmg_collider.disabled = false
-		current_reload = reload_time
-	elif current_reload < reload_time >> 1:
-		dmg_collider.disabled = true
-	current_reload -= 1
-
-func attack_stop():
-	dmg_collider.disabled = true
-	current_reload = 0
+		current_reload = attack_reload
 
 func die():
 	# ANIMATION: death
@@ -69,12 +63,16 @@ func _ready():
 	if prev_direction == 1: health_bar.fill_mode = ProgressBar.FILL_BEGIN_TO_END
 	else: health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 	hurt_area.area_entered.connect(injured)
-	if int(Global.info_wave / 5)  != 0:
-		max_health += 0.5 * pow(hp_increase, int(Global.info_wave / 5) - 1) 
-		damage += 0.5 * pow(dmg_increase, int(Global.info_wave / 5) - 1) 
+	if int(Global.waves_completed / 5) != 0:
+		max_health += 0.5 * pow(hp_increase, int(Global.waves_completed / 5) - 1) 
+		damage += 0.5 * pow(dmg_increase, int(Global.waves_completed / 5) - 1) 
 	health = max_health
 
 func _physics_process(_delta):
+	if current_reload > 0:
+		current_reload -= 1
+		dmg_collider.disabled = true
+	
 	find_target()
 	if target == null: return
 	
@@ -88,7 +86,6 @@ func _physics_process(_delta):
 		
 	if global_position.distance_squared_to(target.global_position) > int(min_distance * min_distance):
 		animated_sprite_2d.play("swim")
-		attack_stop()
 		global_position.x = global_position.x + velocity.x
 		global_position.y = global_position.y + velocity.y
-	else: attack_start()
+	else: attack()

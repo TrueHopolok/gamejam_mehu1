@@ -11,12 +11,18 @@ config_version=5
 [application]
 
 config/name="FishIsGood"
+run/main_scene="res://scenes/test_M.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 
 [autoload]
 
 Global="*res://scripts/global.gd"
+
+[debug]
+
+shapes/collision/shape_color=Color(0.825757, 0.35785, 0.383316, 0.556863)
+shapes/paths/geometry_color=Color(0.830192, 0.195984, 0.205559, 0.4)
 
 [display]
 
@@ -25,6 +31,12 @@ window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 30.0
+}
 
 [input]
 

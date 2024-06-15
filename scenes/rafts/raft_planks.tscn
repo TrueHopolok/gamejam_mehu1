@@ -1,15 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://dj7u2hq5sywed"]
 
-[ext_resource type="Script" path="res://scripts/rafts/raft_planks.gd" id="1_ursyp"]
+[ext_resource type="Script" path="res://scripts/player/raft.gd" id="1_qmm75"]
 [ext_resource type="Texture2D" uid="uid://dbxaakhi3h6j7" path="res://textures/raft/Raft_planks.png" id="2_j4g2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
 size = Vector2(16, 16)
 
-[node name="Raft_planks" type="Node2D"]
-script = ExtResource("1_ursyp")
+[node name="RaftPlanks" type="Node2D"]
+script = ExtResource("1_qmm75")
 
 [node name="HurtArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
 shape = SubResource("RectangleShape2D_imlpb")

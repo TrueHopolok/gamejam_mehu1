@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://0l0r6ulwoyts"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_v4qo1"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_v4qo1"]
 [ext_resource type="Texture2D" uid="uid://codo4ufookglc" path="res://textures/player/Player_idle.png" id="2_kxncc"]
 [ext_resource type="Texture2D" uid="uid://cwu27q8qxdliw" path="res://textures/player/Player_run.png" id="3_u60ss"]
 
@@ -163,6 +163,7 @@ position = Vector2(0, 6)
 [node name="PlayerDmgBox" type="CollisionShape2D" parent="PlayerDmgArea"]
 position = Vector2(6, 0)
 shape = SubResource("RectangleShape2D_7yq1n")
+disabled = true
 
 [node name="HurtArea" type="Area2D" parent="."]
 collision_layer = 4
