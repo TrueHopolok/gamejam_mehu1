@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="1_ngf35"]
 [ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player.tscn" id="2_1yr1c"]
 [ext_resource type="PackedScene" uid="uid://bb1jp3uunya1q" path="res://scenes/fish.tscn" id="3_q12r3"]
-[ext_resource type="PackedScene" uid="uid://ccxsax6vcf8qa" path="res://scenes/raft.tscn" id="4_h0otd"]
 [ext_resource type="PackedScene" uid="uid://cxyxi3scmnmd1" path="res://scenes/junk.tscn" id="6_eljdr"]
+[ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="6_xkfob"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,20 +17,23 @@
 z_index = 1
 position = Vector2(160, 96)
 
-[node name="Fish" parent="." instance=ExtResource("3_q12r3")]
-position = Vector2(264, 72)
-
-[node name="Raft" parent="." instance=ExtResource("4_h0otd")]
-position = Vector2(72, 56)
-
-[node name="Raft2" parent="." instance=ExtResource("4_h0otd")]
-position = Vector2(88, 56)
-
-[node name="Raft3" parent="." instance=ExtResource("4_h0otd")]
-position = Vector2(120, 56)
-
-[node name="Raft4" parent="." instance=ExtResource("4_h0otd")]
-position = Vector2(104, 56)
-
 [node name="Junk" parent="." instance=ExtResource("6_eljdr")]
 position = Vector2(264, 168)
+
+[node name="Raft" parent="." instance=ExtResource("6_xkfob")]
+position = Vector2(84, 60)
+
+[node name="Raft2" parent="." instance=ExtResource("6_xkfob")]
+position = Vector2(100, 60)
+
+[node name="Raft3" parent="." instance=ExtResource("6_xkfob")]
+position = Vector2(116, 60)
+
+[node name="Raft4" parent="." instance=ExtResource("6_xkfob")]
+position = Vector2(132, 60)
+
+[node name="Raft5" parent="." instance=ExtResource("6_xkfob")]
+position = Vector2(116, 76)
+
+[node name="Fish" parent="." instance=ExtResource("3_q12r3")]
+position = Vector2(264, 72)
