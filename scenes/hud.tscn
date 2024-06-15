@@ -16,6 +16,7 @@ texture = ExtResource("1_u5ea0")
 
 [node name="BorderIcon" type="TextureRect" parent="FishingIcon"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 40.0
@@ -32,6 +33,7 @@ texture = ExtResource("1_u5ea0")
 
 [node name="BorderIcon" type="TextureRect" parent="WeaponIcon"]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -8.0
 offset_top = -8.0
 offset_right = 40.0
@@ -61,6 +63,7 @@ offset_bottom = 80.0
 texture = ExtResource("1_u5ea0")
 
 [node name="Amount" type="Label" parent="Rope"]
+layout_mode = 0
 offset_left = 16.0
 offset_right = 96.0
 offset_bottom = 16.0
@@ -75,6 +78,7 @@ offset_bottom = 96.0
 texture = ExtResource("1_u5ea0")
 
 [node name="Amount" type="Label" parent="Metal"]
+layout_mode = 0
 offset_left = 16.0
 offset_right = 96.0
 offset_bottom = 16.0
@@ -89,6 +93,7 @@ offset_bottom = 112.0
 texture = ExtResource("1_u5ea0")
 
 [node name="Amount" type="Label" parent="Fish"]
+layout_mode = 0
 offset_left = 16.0
 offset_right = 96.0
 offset_bottom = 16.0

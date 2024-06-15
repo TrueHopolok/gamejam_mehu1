@@ -13,6 +13,7 @@ func die():
 	queue_free()
 
 func injured(area : Area2D):
+	print(area)
 	if area.name == "DmgArea":
 		health -= area.get_parent().damage
 		if health <= 0.0: die()

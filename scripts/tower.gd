@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var projectile_damage : float = 1
-@export var projectile_speed : float = 1.2
+@export var projectile_speed : float = 2
 @export var projectile_prefab : PackedScene = null
 @export var reload_time : int = 90
 
@@ -41,8 +41,7 @@ func _physics_process(_delta):
 	if current_reload > 0: return
 	current_reload = reload_time
 	var instance = projectile_prefab.instantiate()
-	instance.global_position = spawn_marker.global_position
-	instance.speed = projectile_speed
-	instance.damage = projectile_damage
-	instance.direction = direction
 	add_child(instance)
+	instance.global_position = spawn_marker.global_position
+	instance.damage = projectile_damage
+	instance.direction = direction * projectile_speed

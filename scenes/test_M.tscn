@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://8rnooayg0lf3"]
+
+[ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_72ht6"]
+[ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="2_0b0l8"]
+[ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player.tscn" id="3_40ew6"]
+[ext_resource type="PackedScene" uid="uid://dq3h2p3ne3ja0" path="res://scenes/fish/fish_pirahna.tscn" id="4_wkqbi"]
+[ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="5_gtefx"]
+
+[node name="TestM" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_72ht6")]
+
+[node name="HUD" parent="." instance=ExtResource("2_0b0l8")]
+
+[node name="Player" parent="." instance=ExtResource("3_40ew6")]
+position = Vector2(152, 82)
+
+[node name="Raft_planks" parent="." instance=ExtResource("5_gtefx")]
+position = Vector2(115, 58)
+
+[node name="Raft_planks2" parent="." instance=ExtResource("5_gtefx")]
+position = Vector2(131, 58)
+
+[node name="Fish_pirahna" parent="." instance=ExtResource("4_wkqbi")]
+position = Vector2(275, 110)
