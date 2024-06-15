@@ -2,6 +2,8 @@ extends Node
 
 @onready var random_generator = RandomNumberGenerator.new()
 
+var junk_types : Array[PackedScene] = \
+[]
 var fishes_types : Array[PackedScene] = \
 []
 var unlocked_fish = 0
@@ -11,14 +13,39 @@ var fishes_killed : int = 0
 var fishes_alive : int = 0
 var waves_completed : int = 0
 
+
+func junk_collected(prize : Array[int]):
+	for i in range(max(len(prize), len(materials_amount))):
+		materials_amount[i] += prize[i]
+	spawn_junk()
+
+func junk_died():
+	spawn_junk()
+
 func fish_killed(prize : Array[int]):
-	for i in range(len(prize)):
+	for i in range(max(len(prize), len(materials_amount))):
 		materials_amount[i] += prize[i]
 	fishes_alive -= 1
 	if fishes_alive <= 0:
 		waves_completed += 1
 		await get_tree().create_timer(10).timeout
 		spawn_wave() 
+
+func spawn_junk():
+	var main : Node2D
+	for element in get_tree().get_root().get_children():
+		if element.name == "Main":
+			main = element
+			break
+	var generated_value = random_generator.randf()
+	var i : int = 0
+	if generated_value >= 0.80: i = 2
+	elif generated_value >= 0.45: i = 1
+	var instance = junk_types[max(i, len(junk_types))].instantiate()
+	main.add_child(instance)
+	instance.global_position = Vector2(randi_range(330, 360), 158)
+	instance.died.connect(junk_died)
+	instance.collected.connect(junk_collected)
 
 func spawn_realboss():
 	pass

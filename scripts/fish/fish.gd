@@ -31,8 +31,8 @@ var health : float = 0
 func find_target():
 	for main in get_tree().get_root().get_children():
 		for element in main.get_children():
-			for name in attackable_objects:
-				if is_instance_of(element, name):
+			for type_name in attackable_objects:
+				if is_instance_of(element, type_name):
 					if target == null: target = element
 					elif global_position.distance_squared_to(target.global_position) > \
 						global_position.distance_squared_to(element.global_position):

@@ -1,14 +1,17 @@
 extends Node2D
 
-signal collected
+signal died
+signal collected(prize)
 
 @export var speed : float = 0.4
+@export var prize : Array[int] = \
+[0, 0, 0] 
 
 @onready var catchable_area : Area2D = $CatchableArea
 
 func catched(area : Area2D):
 	if area.name == "CollectArea":
-		collected.emit()
+		collected.emit(prize)
 		queue_free()
 
 func _ready():
@@ -17,4 +20,6 @@ func _ready():
 func _process(delta):
 	# ANIMATION: swimming
 	global_position.x -= speed
-	if global_position.x <= -16: queue_free()
+	if global_position.x <= -16: 
+		died.emit()
+		queue_free()
