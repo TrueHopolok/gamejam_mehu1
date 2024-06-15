@@ -7,7 +7,7 @@ signal collected
 @onready var catchable_area : Area2D = $CatchableArea
 
 func catched(area : Area2D):
-	if is_instance_of(area.get_parent(), Player):
+	if area.name == "CollectArea":
 		collected.emit()
 		queue_free()
 

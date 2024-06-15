@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmka86r5mwrqj"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_ompdt"]
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="1_vsmtf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3iti7"]
+size = Vector2(16, 16)
+
+[node name="Projectile" type="Node2D"]
+script = ExtResource("1_ompdt")
+
+[node name="PlayerDmgArea" type="Area2D" parent="."]
+
+[node name="PlayerDmgBox" type="CollisionShape2D" parent="PlayerDmgArea"]
+shape = SubResource("RectangleShape2D_3iti7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vsmtf")

@@ -19,6 +19,8 @@ script = ExtResource("1_4dwy6")
 shape = SubResource("RectangleShape2D_mca4b")
 
 [node name="DmgArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
 [node name="DmgBox" type="CollisionShape2D" parent="DmgArea"]
 position = Vector2(4, 0)
