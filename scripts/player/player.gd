@@ -1,7 +1,7 @@
 class_name Player extends Node2D
 
 @export_subgroup("Weapon Properties")
-@export var damage : float = 0.5
+@export var weapon_damage : float = 0.5
 @export var durability : int = 0
 @export var attack_size : float = 1
 
@@ -28,6 +28,7 @@ class_name Player extends Node2D
 @onready var hurt_area : Area2D = $HurtArea
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
+var damage : float
 var velocity : Vector2
 var prev_direction : int = 1
 var health : float = 0
@@ -55,6 +56,7 @@ func attack():
 	if durability > 0:
 		durability -= 1
 		dmg_collider.scale.x = attack_size
+		damage = weapon_damage
 		if durability <= 0:
 			# ANIMATION: show hand as a weapon through global
 			pass
@@ -63,6 +65,7 @@ func attack():
 		damage = basic_damage
 	dmg_collider.disabled = false
 	current_reload = attack_reload
+	damage += Global.strength
 
 func _ready():
 	health = max_health
