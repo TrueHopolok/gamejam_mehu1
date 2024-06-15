@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bb1jp3uunya1q"]
+[gd_scene load_steps=5 format=3 uid="uid://bb1jp3uunya1q"]
 
 [ext_resource type="Script" path="res://scripts/fish.gd" id="1_4dwy6"]
-[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://sprites/error.png" id="2_qxkfg"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="3_q7de3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mca4b"]
@@ -26,8 +25,8 @@ collision_mask = 4
 position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_4fds8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qxkfg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -9.0

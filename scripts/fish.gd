@@ -18,6 +18,7 @@ signal died
 @onready var dmg_collider : CollisionShape2D = $DmgArea/DmgBox
 @onready var hurt_area : Area2D = $HurtArea
 @onready var health_bar : ProgressBar = $HealthBar
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var current_reload : int = 0
 var target : Node2D = null
@@ -38,7 +39,7 @@ func find_target():
 
 func attack_start():
 	if current_reload <= 0:
-		# ANIMATION: attack
+		animated_sprite_2d.play("attack")
 		dmg_collider.disabled = false
 		current_reload = reload_time
 	elif current_reload < reload_time >> 1:
@@ -86,7 +87,7 @@ func _physics_process(_delta):
 		else: health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 		
 	if global_position.distance_squared_to(target.global_position) > int(min_distance * min_distance):
-		# ANIMATION: move
+		animated_sprite_2d.play("swim")
 		attack_stop()
 		global_position.x = global_position.x + velocity.x
 		global_position.y = global_position.y + velocity.y
