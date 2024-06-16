@@ -40,20 +40,22 @@ bg_color = Color(0.628523, 0.604947, 0.466862, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cideq"]
 bg_color = Color(0, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.830984, 0.586977, 0, 1)
+border_blend = true
 corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d2il"]
 bg_color = Color(1, 0, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(0.831373, 0.588235, 0, 1)
+border_blend = true
 
 [resource]
 default_font_size = 31

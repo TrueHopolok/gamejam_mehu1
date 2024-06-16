@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cxyxi3scmnmd1"]
 
-[ext_resource type="Script" path="res://scripts/junk/junk.gd" id="1_00hul"]
+[ext_resource type="Script" path="res://scripts/junk.gd" id="1_00hul"]
 [ext_resource type="Texture2D" uid="uid://bk2vlefrmw0vt" path="res://textures/junk/Wood_floaten.png" id="2_ny0lp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6gww"]

@@ -20,7 +20,9 @@ func _pressed():
 		Global.materials_amount[i] -= cost[i]
 	player.weapon_damage = damage
 	player.durability = durability + Global.extra_durability
+	player.max_durability = durability + Global.extra_durability
 	player.attack_size = attack_size
+	# change weapon texture/image
 
 func _physics_process(_delta):
 	for label in cost_labels:

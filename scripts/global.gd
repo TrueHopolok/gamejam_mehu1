@@ -84,15 +84,18 @@ func spawn_wave():
 			instance.global_position.y = random_generator.randi_range(30, 150)
 
 func load_main_menu():
+	# TODO: switch tree main node to main menu node
 	pass
 
 func load_game_screen():
-	# load main scene and reset all data
+	# TODO: switch tree root to game screen node
+	# TODO: reset all data
 	await get_tree().create_timer(10).timeout 
 	spawn_wave()
 
 func load_game_over():
-	# load game over screen and pause the game (ui still clickable)
+	# TODO: pause game (and game ui also)
+	# TODO: open gameover screen menu
 	pass
 
 func _ready():

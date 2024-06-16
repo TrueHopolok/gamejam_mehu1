@@ -1,4 +1,4 @@
-extends Node2D
+class_name Tower extends Node2D
 
 @export var projectile_damage : float = 1
 @export var projectile_speed : float = 2

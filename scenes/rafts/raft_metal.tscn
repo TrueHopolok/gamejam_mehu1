@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dfxrmnyklf0mw"]
 
-[ext_resource type="Script" path="res://scripts/rafts/raft.gd" id="1_f4jib"]
+[ext_resource type="Script" path="res://scripts/player/raft.gd" id="1_tq6g2"]
 [ext_resource type="Texture2D" uid="uid://dwdlh2spmrtft" path="res://textures/raft/Raft_box.png" id="2_80keq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
@@ -43,12 +43,12 @@ animations = [{
 }]
 
 [node name="RaftMetal" type="Node2D" groups=["Attackable"]]
-script = ExtResource("1_f4jib")
+script = ExtResource("1_tq6g2")
 max_health = 100.0
 is_empty = false
 
 [node name="HurtArea" type="Area2D" parent="."]
-collision_layer = 12
+collision_layer = 28
 collision_mask = 4
 
 [node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]

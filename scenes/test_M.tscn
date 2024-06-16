@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=11 format=3 uid="uid://8rnooayg0lf3"]
 
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_72ht6"]
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="2_0b0l8"]
@@ -10,9 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cxyxi3scmnmd1" path="res://scenes/junk/junk_wood.tscn" id="8_hjk8r"]
 [ext_resource type="PackedScene" uid="uid://cp8wc0m211xyh" path="res://scenes/junk/junk_rope.tscn" id="9_af4g7"]
 [ext_resource type="PackedScene" uid="uid://dpvjogotxba0w" path="res://scenes/junk/junk_metal.tscn" id="10_36npv"]
-[ext_resource type="PackedScene" uid="uid://dtfvx6n84gkqv" path="res://scenes/towers/tower.tscn" id="11_pjxq3"]
 
-[node name="TestM" type="Node2D"]
+[node name="Main" type="Node2D"]
 
 [node name="Background" parent="." instance=ExtResource("1_72ht6")]
 
@@ -20,7 +19,9 @@
 
 [node name="Player" parent="." instance=ExtResource("3_40ew6")]
 z_index = 2
-position = Vector2(237, 83)
+position = Vector2(220, 83)
+regen_time = 150
+invincability_time = 30
 
 [node name="FishPirahna" parent="." instance=ExtResource("4_qco1a")]
 position = Vector2(102, 88)
@@ -42,9 +43,6 @@ position = Vector2(308, 43)
 
 [node name="JunkMetal" parent="." instance=ExtResource("10_36npv")]
 position = Vector2(296, 146)
-
-[node name="Tower" parent="." instance=ExtResource("11_pjxq3")]
-position = Vector2(161, 85)
 
 [node name="FishPirahna2" parent="." instance=ExtResource("4_qco1a")]
 position = Vector2(263, 109)

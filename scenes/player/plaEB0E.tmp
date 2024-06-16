@@ -1,25 +1,18 @@
-[gd_scene load_steps=72 format=3 uid="uid://0l0r6ulwoyts"]
+[gd_scene load_steps=67 format=3 uid="uid://0l0r6ulwoyts"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_v4qo1"]
 [ext_resource type="Texture2D" uid="uid://codo4ufookglc" path="res://textures/player/Player_idle.png" id="2_kxncc"]
-[ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="2_yrv08"]
-[ext_resource type="PackedScene" uid="uid://bi8xlq3p31nwi" path="res://scenes/rafts/raft_logs.tscn" id="3_p8g48"]
 [ext_resource type="Texture2D" uid="uid://cwu27q8qxdliw" path="res://textures/player/Player_run.png" id="3_u60ss"]
 [ext_resource type="Texture2D" uid="uid://bg1adjvnnvrd3" path="res://textures/player/Player_attack_idle.png" id="3_xmeut"]
-[ext_resource type="PackedScene" uid="uid://dfxrmnyklf0mw" path="res://scenes/rafts/raft_metal.tscn" id="4_7sefx"]
 [ext_resource type="Texture2D" uid="uid://bs23318cmccsx" path="res://textures/player/Splash.png" id="4_bsick"]
 [ext_resource type="Texture2D" uid="uid://cglv4ysqyt88p" path="res://textures/player/Player_attack_run.png" id="4_oohy6"]
-[ext_resource type="PackedScene" uid="uid://dtfvx6n84gkqv" path="res://scenes/towers/tower.tscn" id="5_gks2k"]
 [ext_resource type="Texture2D" uid="uid://drgi145jpd3di" path="res://textures/player/Player_swim_idle.png" id="7_8cb56"]
 [ext_resource type="Texture2D" uid="uid://dbibxag8a4081" path="res://textures/player/Player_swim_attack.png" id="7_o1muf"]
 [ext_resource type="Texture2D" uid="uid://de5frkpefytu5" path="res://textures/player/Player_swim_run.png" id="8_cnthv"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="10_uhybp"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p18u"]
-size = Vector2(16, 17)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ato5"]
-size = Vector2(16, 4)
+size = Vector2(16, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yq1n"]
 size = Vector2(12, 24)
@@ -434,21 +427,7 @@ border_blend = true
 
 [node name="Player" type="Node2D" groups=["Attackable", "Player"]]
 script = ExtResource("1_v4qo1")
-regen_time = 300
-invincability_time = 160
 drowning_time = 600
-placeables = Array[PackedScene]([ExtResource("2_yrv08"), ExtResource("3_p8g48"), ExtResource("4_7sefx"), ExtResource("5_gks2k")])
-place_costs = Array[Array]([[2], [3, 2], [0, 1, 3], [2, 2, 3]])
-min_place_distance = 900.0
-
-[node name="PlaceArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 16
-
-[node name="PlaceBox" type="CollisionShape2D" parent="PlaceArea"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_4p18u")
-debug_color = Color(0.852544, 0.179958, 0.756203, 0.556863)
 
 [node name="WaterArea" type="Area2D" parent="."]
 position = Vector2(0, 6)
@@ -456,6 +435,7 @@ collision_layer = 0
 collision_mask = 8
 
 [node name="WaterBox" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_6ato5")
 
 [node name="PlayerDmgArea" type="Area2D" parent="."]
@@ -499,9 +479,9 @@ show_percentage = false
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -8.0
-offset_top = -16.0
+offset_top = -14.0
 offset_right = 8.0
-offset_bottom = -12.0
+offset_bottom = -10.0
 theme = ExtResource("10_uhybp")
 value = 100.0
 show_percentage = false

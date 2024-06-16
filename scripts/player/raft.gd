@@ -10,6 +10,8 @@ var building : Node2D = null
 
 func die():
 	# play death animation and destroy what is on top
+	if building != null:
+		building.queue_free()
 	queue_free()
 
 func injured(area : Area2D):

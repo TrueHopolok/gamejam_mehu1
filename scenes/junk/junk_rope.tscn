@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cp8wc0m211xyh"]
 
-[ext_resource type="Script" path="res://scripts/junk/junk.gd" id="1_jiq8m"]
+[ext_resource type="Script" path="res://scripts/junk.gd" id="1_jiq8m"]
 [ext_resource type="Texture2D" uid="uid://cklw4rrebiib0" path="res://textures/junk/Rope_floaten.png" id="2_7xyyq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6gww"]
