@@ -411,7 +411,7 @@ animations = [{
 "speed": 20.0
 }]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="Node2D" groups=["Attackable", "Player"]]
 script = ExtResource("1_v4qo1")
 
 [node name="WaterArea" type="Area2D" parent="."]

@@ -27,8 +27,9 @@ class_name Player extends Node2D
 @onready var dmg_collider : CollisionShape2D = $PlayerDmgArea/PlayerDmgBox
 @onready var hurt_area : Area2D = $HurtArea
 @onready var water_area : Area2D = $WaterArea
-@onready var animated_sprite_2d = $AnimatedSprite2D
-@onready var animated_sprite_splash = $AnimatedSpriteSplash
+
+@onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_splash : AnimatedSprite2D = $AnimatedSpriteSplash
 
 var damage : float
 var velocity : Vector2
@@ -68,7 +69,7 @@ func attack():
 		damage = basic_damage
 	dmg_collider.disabled = false
 	current_reload = attack_reload
-	damage += Global.strength
+	damage += Global.extra_melee_damage
 
 func _ready():
 	health = max_health

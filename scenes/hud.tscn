@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfysvgiocjmd5"]
+[gd_scene load_steps=6 format=3 uid="uid://cfysvgiocjmd5"]
 
 [ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://textures/error.png" id="1_u5ea0"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wofq0"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_6foxy"]
+[ext_resource type="Script" path="res://scripts/hud/weapon_button.gd" id="4_gcdtb"]
+[ext_resource type="Script" path="res://scripts/hud/melee_button.gd" id="5_km1wq"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_wofq0")
@@ -109,61 +111,225 @@ clip_text = true
 offset_top = 48.0
 offset_right = 16.0
 offset_bottom = 64.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_gcdtb")
+cost = Array[int]([1, 1, 0])
+
+[node name="CostLabel" type="Label" parent="DaggerButton"]
+offset_left = 77.0
+offset_top = -35.0
+offset_right = 100.0
+offset_bottom = -27.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel2" type="Label" parent="DaggerButton"]
+offset_left = 128.0
+offset_top = -35.0
+offset_right = 151.0
+offset_bottom = -27.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel3" type="Label" parent="DaggerButton"]
+offset_left = 180.0
+offset_top = -35.0
+offset_right = 203.0
+offset_bottom = -27.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="SpearButton" type="Button" parent="."]
 offset_top = 64.0
 offset_right = 16.0
 offset_bottom = 80.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_gcdtb")
+durability = 30
+attack_size = 1.5
+cost = Array[int]([2, 1, 1])
+
+[node name="CostLabel" type="Label" parent="SpearButton"]
+offset_left = 77.0
+offset_top = -51.0
+offset_right = 100.0
+offset_bottom = -43.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "2"
+
+[node name="CostLabel2" type="Label" parent="SpearButton"]
+offset_left = 128.0
+offset_top = -51.0
+offset_right = 151.0
+offset_bottom = -43.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel3" type="Label" parent="SpearButton"]
+offset_left = 180.0
+offset_top = -51.0
+offset_right = 203.0
+offset_bottom = -43.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
 
 [node name="AxeButton" type="Button" parent="."]
 offset_top = 80.0
 offset_right = 16.0
 offset_bottom = 96.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_gcdtb")
+damage = 2.0
+durability = 30
+cost = Array[int]([1, 2, 2])
+
+[node name="CostLabel" type="Label" parent="AxeButton"]
+offset_left = 77.0
+offset_top = -67.0
+offset_right = 100.0
+offset_bottom = -59.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel2" type="Label" parent="AxeButton"]
+offset_left = 128.0
+offset_top = -67.0
+offset_right = 151.0
+offset_bottom = -59.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "2"
+
+[node name="CostLabel3" type="Label" parent="AxeButton"]
+offset_left = 180.0
+offset_top = -67.0
+offset_right = 203.0
+offset_bottom = -59.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "2"
 
 [node name="SwordButton" type="Button" parent="."]
 offset_top = 96.0
 offset_right = 16.0
 offset_bottom = 112.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_gcdtb")
+damage = 1.5
+durability = 50
+cost = Array[int]([1, 1, 4])
+
+[node name="CostLabel" type="Label" parent="SwordButton"]
+offset_left = 77.0
+offset_top = -83.0
+offset_right = 100.0
+offset_bottom = -75.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel2" type="Label" parent="SwordButton"]
+offset_left = 128.0
+offset_top = -83.0
+offset_right = 151.0
+offset_bottom = -75.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
+
+[node name="CostLabel3" type="Label" parent="SwordButton"]
+offset_left = 180.0
+offset_top = -83.0
+offset_right = 203.0
+offset_bottom = -75.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "4"
 
 [node name="MeleeDmgButton" type="Button" parent="."]
 offset_top = 128.0
 offset_right = 16.0
 offset_bottom = 144.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("5_km1wq")
+
+[node name="CostLabel" type="Label" parent="MeleeDmgButton"]
+offset_left = 232.0
+offset_top = -115.0
+offset_right = 255.0
+offset_bottom = -107.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
 
 [node name="DurabilityButton" type="Button" parent="."]
 offset_top = 144.0
 offset_right = 16.0
 offset_bottom = 160.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("5_km1wq")
+damage = 0.0
+durability = 1
+
+[node name="CostLabel" type="Label" parent="DurabilityButton"]
+offset_left = 232.0
+offset_top = -131.0
+offset_right = 255.0
+offset_bottom = -123.0
+theme = ExtResource("2_6foxy")
+theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "1"
 
 [node name="PlanksButton" type="Button" parent="."]
 offset_left = 304.0
 offset_top = 48.0
 offset_right = 320.0
 offset_bottom = 64.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
@@ -174,6 +340,7 @@ offset_left = 304.0
 offset_top = 64.0
 offset_right = 320.0
 offset_bottom = 80.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
@@ -184,6 +351,7 @@ offset_left = 304.0
 offset_top = 80.0
 offset_right = 320.0
 offset_bottom = 96.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
@@ -194,6 +362,7 @@ offset_left = 304.0
 offset_top = 96.0
 offset_right = 320.0
 offset_bottom = 112.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
@@ -204,6 +373,7 @@ offset_left = 304.0
 offset_top = 128.0
 offset_right = 320.0
 offset_bottom = 144.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
@@ -214,6 +384,7 @@ offset_left = 304.0
 offset_top = 144.0
 offset_right = 320.0
 offset_bottom = 160.0
+focus_mode = 0
 theme = ExtResource("2_6foxy")
 icon = ExtResource("1_u5ea0")
 icon_alignment = 1
