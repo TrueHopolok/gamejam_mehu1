@@ -45,6 +45,7 @@ animations = [{
 [node name="JunkMetal" type="Node2D"]
 z_index = 1
 script = ExtResource("1_bwbj4")
+prize = Array[int]([0, 0, 1])
 
 [node name="CatchableArea" type="Area2D" parent="."]
 collision_layer = 2

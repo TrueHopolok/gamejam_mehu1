@@ -26,6 +26,7 @@ class_name Player extends Node2D
 
 @onready var dmg_collider : CollisionShape2D = $PlayerDmgArea/PlayerDmgBox
 @onready var hurt_area : Area2D = $HurtArea
+@onready var water_area : Area2D = $WaterArea
 @onready var animated_sprite_2d = $AnimatedSprite2D
 
 var damage : float
@@ -35,10 +36,11 @@ var health : float = 0
 var current_regen : int = 0
 var current_reload : int = 0
 var attacking : bool = false
+var is_on_ground : bool = false
 
 func die():
 	# ANIMATION: play death animation and end game
-	Global.game_over()
+	Global.load_game_over()
 	queue_free()
 
 func injured(area : Area2D):
@@ -74,6 +76,9 @@ func _ready():
 
 func _physics_process(_delta):
 	if health <= 0.0: return
+	
+	if  len(water_area.get_overlapping_areas()) > 0:
+		is_on_ground = true
 	
 	if current_reload > 0:
 		current_reload -= 1

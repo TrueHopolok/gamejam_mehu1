@@ -32,7 +32,7 @@ animations = [{
 script = ExtResource("1_aw1n2")
 
 [node name="HurtArea" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 4
 
 [node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]

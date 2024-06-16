@@ -15,18 +15,7 @@ var waves_completed : int = 0
 
 var strength : float = 0
 
-
-func junk_collected(prize : Array[int]):
-	for i in range(max(len(prize), len(materials_amount))):
-		materials_amount[i] += prize[i]
-	spawn_junk()
-
-func junk_died():
-	spawn_junk()
-
 func fish_killed(prize : Array[int]):
-	for i in range(max(len(prize), len(materials_amount))):
-		materials_amount[i] += prize[i]
 	fishes_alive -= 1
 	if fishes_alive <= 0:
 		waves_completed += 1
@@ -46,8 +35,7 @@ func spawn_junk():
 	var instance = junk_types[max(i, len(junk_types))].instantiate()
 	main.add_child(instance)
 	instance.global_position = Vector2(randi_range(330, 360), 158)
-	instance.died.connect(junk_died)
-	instance.collected.connect(junk_collected)
+	instance.died.connect(spawn_junk)
 
 func spawn_realboss():
 	pass
@@ -94,15 +82,15 @@ func spawn_wave():
 			instance.global_position.x = random_generator.randi_range(260, 320)
 			instance.global_position.y = random_generator.randi_range(30, 150)
 
-func main_menu():
+func load_main_menu():
 	pass
 
-func game_screen():
+func load_game_screen():
 	# load main scene and reset all data
 	await get_tree().create_timer(10).timeout 
 	spawn_wave()
 
-func game_over():
+func load_game_over():
 	# load game over screen and pause the game (ui still clickable)
 	pass
 

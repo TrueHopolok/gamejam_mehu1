@@ -1,7 +1,6 @@
 extends Node2D
 
 signal died
-signal collected(prize)
 
 @export var speed : float = 0.4
 @export var prize : Array[int] = \
@@ -11,7 +10,9 @@ signal collected(prize)
 
 func catched(area : Area2D):
 	if area.name == "CollectArea":
-		collected.emit(prize)
+		for i in range(min(len(prize), len(Global.materials_amount))):
+			Global.materials_amount[i] += prize[i]
+		died.emit()
 		queue_free()
 
 func _ready():

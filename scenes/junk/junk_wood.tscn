@@ -45,6 +45,7 @@ animations = [{
 [node name="JunkWood" type="Node2D"]
 z_index = 1
 script = ExtResource("1_00hul")
+prize = Array[int]([1, 0, 0])
 
 [node name="CatchableArea" type="Area2D" parent="."]
 collision_layer = 2

@@ -1,4 +1,4 @@
-extends Node2D
+class_name Raft extends Node2D
 
 @export var max_health : float = 20
 @export var is_empty : bool = true

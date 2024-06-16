@@ -46,6 +46,8 @@ func attack():
 
 func die():
 	# ANIMATION: death
+	for i in range(min(len(prize), len(Global.materials_amount))):
+		Global.materials_amount[i] += prize[i]
 	died.emit()
 	queue_free()
 

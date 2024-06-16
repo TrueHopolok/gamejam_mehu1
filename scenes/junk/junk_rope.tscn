@@ -45,6 +45,7 @@ animations = [{
 [node name="JunkRope" type="Node2D"]
 z_index = 1
 script = ExtResource("1_jiq8m")
+prize = Array[int]([0, 1, 0])
 
 [node name="CatchableArea" type="Area2D" parent="."]
 collision_layer = 2

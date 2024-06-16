@@ -1,8 +1,11 @@
-[gd_scene load_steps=26 format=3 uid="uid://0l0r6ulwoyts"]
+[gd_scene load_steps=27 format=3 uid="uid://0l0r6ulwoyts"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_v4qo1"]
 [ext_resource type="Texture2D" uid="uid://codo4ufookglc" path="res://textures/player/Player_idle.png" id="2_kxncc"]
 [ext_resource type="Texture2D" uid="uid://cwu27q8qxdliw" path="res://textures/player/Player_run.png" id="3_u60ss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ato5"]
+size = Vector2(16, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yq1n"]
 size = Vector2(12, 24)
@@ -155,8 +158,14 @@ animations = [{
 [node name="Player" type="Node2D"]
 script = ExtResource("1_v4qo1")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="WaterArea" type="Area2D" parent="."]
 position = Vector2(0, 6)
+collision_layer = 0
+collision_mask = 8
+
+[node name="WaterBox" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_6ato5")
 
 [node name="PlayerDmgArea" type="Area2D" parent="."]
 
