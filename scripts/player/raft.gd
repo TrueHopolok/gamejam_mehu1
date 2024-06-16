@@ -21,4 +21,4 @@ func injured(area : Area2D):
 
 func _ready():
 	hurt_area.area_entered.connect(injured)
-	health = max_health
+	health = max_health + Global.extra_raft_health

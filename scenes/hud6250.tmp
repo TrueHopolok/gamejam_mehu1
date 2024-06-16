@@ -1,6 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://cfysvgiocjmd5"]
+[gd_scene load_steps=34 format=3 uid="uid://cfysvgiocjmd5"]
 
 [ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_nm15k"]
+[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://textures/error.png" id="1_u5ea0"]
 [ext_resource type="Texture2D" uid="uid://cyjp4vq0qqfw1" path="res://textures/UI/Fist.png" id="2_0sjmc"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_6foxy"]
 [ext_resource type="Script" path="res://scenes/weapon_icon.gd" id="3_bjn15"]
@@ -13,42 +14,24 @@
 [ext_resource type="Script" path="res://scripts/hud/placeable_button.gd" id="7_3x7ck"]
 [ext_resource type="Texture2D" uid="uid://cws0uk05icnf5" path="res://textures/UI/Fish.png" id="8_7w0tm"]
 [ext_resource type="Script" path="res://scripts/hud/range_button.gd" id="8_m0ay0"]
-[ext_resource type="Texture2D" uid="uid://sswhledf1psb" path="res://textures/UI/weapons/Knife.png" id="10_6ungh"]
-[ext_resource type="Texture2D" uid="uid://nmtuh1xts54s" path="res://textures/UI/weapons/Knife_pressed.png" id="11_f1pwb"]
-[ext_resource type="Texture2D" uid="uid://iqvd8c5pq43g" path="res://textures/UI/weapons/Knife_selected.png" id="12_b55er"]
-[ext_resource type="Texture2D" uid="uid://biyipxiy8llwq" path="res://textures/UI/weapons/Spear.png" id="14_pok1d"]
-[ext_resource type="Texture2D" uid="uid://wo6mihxaaqnl" path="res://textures/UI/weapons/Spear_pressed.png" id="15_nqs8q"]
-[ext_resource type="Texture2D" uid="uid://cxcepmrqhmv48" path="res://textures/UI/weapons/Spear_selected.png" id="16_8838g"]
-[ext_resource type="Texture2D" uid="uid://b1ukduy30k1xn" path="res://textures/UI/weapons/Axe.png" id="17_keuh1"]
-[ext_resource type="Texture2D" uid="uid://pcdth86v00gk" path="res://textures/UI/weapons/Axe_pressed.png" id="18_k3dxp"]
-[ext_resource type="Texture2D" uid="uid://wsrb8504mm2e" path="res://textures/UI/weapons/Axe_selected.png" id="19_fbn6e"]
+[ext_resource type="Texture2D" uid="uid://sswhledf1psb" path="res://textures/UI/Knife.png" id="9_slmtb"]
+[ext_resource type="Texture2D" uid="uid://nmtuh1xts54s" path="res://textures/UI/Knife_pressed.png" id="10_qu2pl"]
+[ext_resource type="Texture2D" uid="uid://iqvd8c5pq43g" path="res://textures/UI/Knife_selected.png" id="11_8qi8v"]
+[ext_resource type="Texture2D" uid="uid://biyipxiy8llwq" path="res://textures/UI/Spear.png" id="13_okxqe"]
+[ext_resource type="Texture2D" uid="uid://wo6mihxaaqnl" path="res://textures/UI/Spear_pressed.png" id="14_304wn"]
+[ext_resource type="Texture2D" uid="uid://cxcepmrqhmv48" path="res://textures/UI/Spear_selected.png" id="15_o330g"]
+[ext_resource type="Texture2D" uid="uid://b1ukduy30k1xn" path="res://textures/UI/Axe.png" id="16_63cy5"]
+[ext_resource type="Texture2D" uid="uid://pcdth86v00gk" path="res://textures/UI/Axe_pressed.png" id="17_uyuw0"]
+[ext_resource type="Texture2D" uid="uid://wsrb8504mm2e" path="res://textures/UI/Axe_selected.png" id="18_6qfi7"]
+[ext_resource type="Texture2D" uid="uid://bgqhrh3sgsogd" path="res://textures/UI/Sword.png" id="19_0mtp6"]
 [ext_resource type="Texture2D" uid="uid://caglusnddabtm" path="res://textures/UI/Damage_arms.png" id="19_xw2cp"]
-[ext_resource type="Texture2D" uid="uid://bgqhrh3sgsogd" path="res://textures/UI/weapons/Sword.png" id="20_728nc"]
+[ext_resource type="Texture2D" uid="uid://c7pgwdxcy3ikg" path="res://textures/UI/Sword_pressed.png" id="20_snrg3"]
 [ext_resource type="Texture2D" uid="uid://dfkx0q0p3xsa5" path="res://textures/UI/Damage_arms_pressed.png" id="20_tdwj2"]
+[ext_resource type="Texture2D" uid="uid://dujcqlllukm4g" path="res://textures/UI/Sword_selected.png" id="21_d33uo"]
 [ext_resource type="Texture2D" uid="uid://7fkyk6dspusf" path="res://textures/UI/Damage_arms_selected.png" id="21_y3p5j"]
-[ext_resource type="Texture2D" uid="uid://c7pgwdxcy3ikg" path="res://textures/UI/weapons/Sword_pressed.png" id="21_ylofi"]
-[ext_resource type="Texture2D" uid="uid://dujcqlllukm4g" path="res://textures/UI/weapons/Sword_selected.png" id="22_f3xcb"]
 [ext_resource type="Texture2D" uid="uid://dhu4xc4wjlicw" path="res://textures/UI/Durability_arms.png" id="23_ehbnm"]
 [ext_resource type="Texture2D" uid="uid://jk6nl8x07waf" path="res://textures/UI/Durability_arms_pressed.png" id="24_xyk6f"]
 [ext_resource type="Texture2D" uid="uid://bxn07aqtncrly" path="res://textures/UI/Durability_arms_selected.png" id="25_gt26u"]
-[ext_resource type="Texture2D" uid="uid://cctcglw8tuknn" path="res://textures/UI/buildings/Raft_wood.png" id="30_6per4"]
-[ext_resource type="Texture2D" uid="uid://dc6y7pnmq3e80" path="res://textures/UI/buildings/Raft_planks.png" id="31_6a8t4"]
-[ext_resource type="Texture2D" uid="uid://b3hnvfewh3tjf" path="res://textures/UI/buildings/Raft_wood_pressed.png" id="31_dotcu"]
-[ext_resource type="Texture2D" uid="uid://dwfxco83x41y0" path="res://textures/UI/buildings/Raft_planks_pressed.png" id="32_6d88l"]
-[ext_resource type="Texture2D" uid="uid://dmaqdgpyei4pu" path="res://textures/UI/buildings/Raft_wood_selected.png" id="32_eciyb"]
-[ext_resource type="Texture2D" uid="uid://cdoyvt651k7vm" path="res://textures/UI/buildings/Raft_planks_selected.png" id="33_ho8i4"]
-[ext_resource type="Texture2D" uid="uid://dlbw3jrmjlpe3" path="res://textures/UI/buildings/Raft_box.png" id="34_2ei21"]
-[ext_resource type="Texture2D" uid="uid://c4lcywnrj1e0t" path="res://textures/UI/buildings/Raft_box_pressed.png" id="35_urthd"]
-[ext_resource type="Texture2D" uid="uid://bsxpylqs2b5aa" path="res://textures/UI/buildings/Raft_box_selected.png" id="36_t15io"]
-[ext_resource type="Texture2D" uid="uid://dcojtsn0o862t" path="res://textures/UI/buildings/Canon.png" id="37_4oext"]
-[ext_resource type="Texture2D" uid="uid://b4btb56oixiur" path="res://textures/UI/buildings/Canon_pressed.png" id="38_rdafb"]
-[ext_resource type="Texture2D" uid="uid://d4la5xr2edwae" path="res://textures/UI/buildings/Canon_selected.png" id="39_gruwo"]
-[ext_resource type="Texture2D" uid="uid://bnpg8qdmgovs5" path="res://textures/UI/Damage_canon.png" id="40_d813a"]
-[ext_resource type="Texture2D" uid="uid://run84yxeqw0j" path="res://textures/UI/Damage_canon_pressed.png" id="41_v2od3"]
-[ext_resource type="Texture2D" uid="uid://bkgrcrtj6a1m8" path="res://textures/UI/Damage_canon_selected.png" id="42_vry6p"]
-[ext_resource type="Texture2D" uid="uid://5gf2jfrbw4sf" path="res://textures/UI/Shield.png" id="44_1mbo1"]
-[ext_resource type="Texture2D" uid="uid://c2yis8gmrbg0e" path="res://textures/UI/Shield_pressed.png" id="45_7ktm7"]
-[ext_resource type="Texture2D" uid="uid://2kixpac5wlds" path="res://textures/UI/Shield_selected.png" id="46_2w48u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv043"]
 content_margin_left = 0.0
@@ -154,9 +137,9 @@ offset_right = 17.0
 offset_bottom = 66.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("10_6ungh")
-texture_pressed = ExtResource("11_f1pwb")
-texture_hover = ExtResource("12_b55er")
+texture_normal = ExtResource("9_slmtb")
+texture_pressed = ExtResource("10_qu2pl")
+texture_hover = ExtResource("11_8qi8v")
 script = ExtResource("4_gcdtb")
 cost = Array[int]([1, 1, 0])
 
@@ -198,9 +181,9 @@ offset_right = 17.0
 offset_bottom = 84.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("14_pok1d")
-texture_pressed = ExtResource("15_nqs8q")
-texture_hover = ExtResource("16_8838g")
+texture_normal = ExtResource("13_okxqe")
+texture_pressed = ExtResource("14_304wn")
+texture_hover = ExtResource("15_o330g")
 script = ExtResource("4_gcdtb")
 durability = 30
 attack_size = 1.5
@@ -245,9 +228,9 @@ offset_right = 16.0
 offset_bottom = 101.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("17_keuh1")
-texture_pressed = ExtResource("18_k3dxp")
-texture_hover = ExtResource("19_fbn6e")
+texture_normal = ExtResource("16_63cy5")
+texture_pressed = ExtResource("17_uyuw0")
+texture_hover = ExtResource("18_6qfi7")
 script = ExtResource("4_gcdtb")
 damage = 2.0
 durability = 30
@@ -292,9 +275,9 @@ offset_right = 16.0
 offset_bottom = 119.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("20_728nc")
-texture_pressed = ExtResource("21_ylofi")
-texture_hover = ExtResource("22_f3xcb")
+texture_normal = ExtResource("19_0mtp6")
+texture_pressed = ExtResource("20_snrg3")
+texture_hover = ExtResource("21_d33uo")
 script = ExtResource("4_gcdtb")
 damage = 1.5
 durability = 50
@@ -383,234 +366,218 @@ text = "1"
 offset_left = 272.0
 offset_right = 320.0
 offset_bottom = 48.0
-texture = ExtResource("31_6a8t4")
+texture = ExtResource("1_u5ea0")
 
-[node name="PlanksButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 49.0
+[node name="PlanksButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 48.0
 offset_right = 320.0
-offset_bottom = 66.0
+offset_bottom = 64.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("31_6a8t4")
-texture_pressed = ExtResource("32_6d88l")
-texture_hover = ExtResource("33_ho8i4")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("7_3x7ck")
 cost = Array[int]([2, 0, 0])
 
 [node name="CostLabel" type="Label" parent="PlanksButton"]
-layout_mode = 0
-offset_left = -227.0
-offset_top = -36.0
-offset_right = -204.0
-offset_bottom = -28.0
+offset_left = -228.0
+offset_top = -35.0
+offset_right = -205.0
+offset_bottom = -27.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "2"
 
 [node name="CostLabel2" type="Label" parent="PlanksButton"]
-layout_mode = 0
-offset_left = -176.0
-offset_top = -36.0
-offset_right = -153.0
-offset_bottom = -28.0
+offset_left = -177.0
+offset_top = -35.0
+offset_right = -154.0
+offset_bottom = -27.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="CostLabel3" type="Label" parent="PlanksButton"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -36.0
-offset_right = -101.0
-offset_bottom = -28.0
+offset_left = -125.0
+offset_top = -35.0
+offset_right = -102.0
+offset_bottom = -27.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
-[node name="LogsButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 67.0
-offset_right = 319.0
-offset_bottom = 83.0
+[node name="LogsButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 80.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("30_6per4")
-texture_pressed = ExtResource("31_dotcu")
-texture_hover = ExtResource("32_eciyb")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("7_3x7ck")
 placeable_id = 1
 cost = Array[int]([3, 2, 0])
 
 [node name="CostLabel" type="Label" parent="LogsButton"]
-layout_mode = 0
-offset_left = -227.0
-offset_top = -54.0
-offset_right = -204.0
-offset_bottom = -46.0
+offset_left = -228.0
+offset_top = -51.0
+offset_right = -205.0
+offset_bottom = -43.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "3"
 
 [node name="CostLabel2" type="Label" parent="LogsButton"]
-layout_mode = 0
-offset_left = -176.0
-offset_top = -54.0
-offset_right = -153.0
-offset_bottom = -46.0
+offset_left = -177.0
+offset_top = -51.0
+offset_right = -154.0
+offset_bottom = -43.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "2"
 
 [node name="CostLabel3" type="Label" parent="LogsButton"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -54.0
-offset_right = -101.0
-offset_bottom = -46.0
+offset_left = -125.0
+offset_top = -51.0
+offset_right = -102.0
+offset_bottom = -43.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
-[node name="MetalButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 85.0
-offset_right = 319.0
-offset_bottom = 101.0
+[node name="MetalButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 80.0
+offset_right = 320.0
+offset_bottom = 96.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("34_2ei21")
-texture_pressed = ExtResource("35_urthd")
-texture_hover = ExtResource("36_t15io")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("7_3x7ck")
 placeable_id = 2
 cost = Array[int]([0, 1, 3])
 
 [node name="CostLabel" type="Label" parent="MetalButton"]
-layout_mode = 0
-offset_left = -227.0
-offset_top = -72.0
-offset_right = -204.0
-offset_bottom = -64.0
+offset_left = -228.0
+offset_top = -67.0
+offset_right = -205.0
+offset_bottom = -59.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="CostLabel2" type="Label" parent="MetalButton"]
-layout_mode = 0
-offset_left = -176.0
-offset_top = -72.0
-offset_right = -153.0
-offset_bottom = -64.0
+offset_left = -177.0
+offset_top = -67.0
+offset_right = -154.0
+offset_bottom = -59.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
 
 [node name="CostLabel3" type="Label" parent="MetalButton"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -72.0
-offset_right = -101.0
-offset_bottom = -64.0
+offset_left = -125.0
+offset_top = -67.0
+offset_right = -102.0
+offset_bottom = -59.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "3"
 
-[node name="CanonButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 103.0
-offset_right = 319.0
-offset_bottom = 119.0
+[node name="CanonButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 96.0
+offset_right = 320.0
+offset_bottom = 112.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("37_4oext")
-texture_pressed = ExtResource("38_rdafb")
-texture_hover = ExtResource("39_gruwo")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("7_3x7ck")
 placeable_id = 3
 cost = Array[int]([2, 2, 3])
 
 [node name="CostLabel" type="Label" parent="CanonButton"]
-layout_mode = 0
-offset_left = -227.0
-offset_top = -90.0
-offset_right = -204.0
-offset_bottom = -82.0
+offset_left = -228.0
+offset_top = -83.0
+offset_right = -205.0
+offset_bottom = -75.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "2"
 
 [node name="CostLabel2" type="Label" parent="CanonButton"]
-layout_mode = 0
-offset_left = -176.0
-offset_top = -90.0
-offset_right = -153.0
-offset_bottom = -82.0
+offset_left = -177.0
+offset_top = -83.0
+offset_right = -154.0
+offset_bottom = -75.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "2"
 
 [node name="CostLabel3" type="Label" parent="CanonButton"]
-layout_mode = 0
-offset_left = -124.0
-offset_top = -90.0
-offset_right = -101.0
-offset_bottom = -82.0
+offset_left = -125.0
+offset_top = -83.0
+offset_right = -102.0
+offset_bottom = -75.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "3"
 
-[node name="RangeDmgButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 140.0
-offset_right = 319.0
-offset_bottom = 156.0
+[node name="RangeDmgButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 144.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("40_d813a")
-texture_pressed = ExtResource("41_v2od3")
-texture_hover = ExtResource("42_vry6p")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("8_m0ay0")
-raft_health = 0.0
 
 [node name="CostLabel" type="Label" parent="RangeDmgButton"]
-layout_mode = 0
-offset_left = -71.0
-offset_top = -127.0
-offset_right = -48.0
-offset_bottom = -119.0
+offset_left = -72.0
+offset_top = -115.0
+offset_right = -49.0
+offset_bottom = -107.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
 
-[node name="RaftHealthButton" type="TextureButton" parent="."]
-offset_left = 303.0
-offset_top = 158.0
-offset_right = 319.0
-offset_bottom = 174.0
+[node name="RaftHealthButton" type="Button" parent="."]
+offset_left = 304.0
+offset_top = 144.0
+offset_right = 320.0
+offset_bottom = 160.0
 focus_mode = 0
 theme = ExtResource("2_6foxy")
-texture_normal = ExtResource("44_1mbo1")
-texture_pressed = ExtResource("45_7ktm7")
-texture_hover = ExtResource("46_2w48u")
+icon = ExtResource("1_u5ea0")
+icon_alignment = 1
+expand_icon = true
 script = ExtResource("8_m0ay0")
-projectile_damage = 0.0
 
 [node name="CostLabel" type="Label" parent="RaftHealthButton"]
-layout_mode = 0
-offset_left = -71.0
-offset_top = -145.0
-offset_right = -48.0
-offset_bottom = -137.0
+offset_left = -72.0
+offset_top = -131.0
+offset_right = -49.0
+offset_bottom = -123.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)

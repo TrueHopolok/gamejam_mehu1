@@ -42,5 +42,5 @@ func _physics_process(_delta):
 	if animated_sprite_2d.animation == "idle": animated_sprite_2d.set_animation("attack")
 	add_child(instance)
 	instance.global_position = spawn_marker.global_position
-	instance.damage = projectile_damage
+	instance.damage = projectile_damage + Global.extra_projectile_damage
 	instance.direction = direction * projectile_speed
