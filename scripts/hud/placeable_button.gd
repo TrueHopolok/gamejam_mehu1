@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @export var placeable_id : int = 0
 @export var cost : Array[int] = \

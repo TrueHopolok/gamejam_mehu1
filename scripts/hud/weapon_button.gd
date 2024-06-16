@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 @export_subgroup("Weapon Properties")
 @export var damage : float = 1.0
@@ -9,8 +9,9 @@ extends Button
 @export var cost : Array[int] = \
 [0, 0, 0]
 
-@onready var player = get_tree().get_first_node_in_group("Player")
+@onready var player : Player = get_tree().get_first_node_in_group("Player")
 @onready var cost_labels = get_children()
+@onready var weapon_icon : TextureRect = get_parent().find_child("WeaponIcon")
 
 func _pressed():
 	for i in range(min(len(Global.materials_amount), len(cost))):
@@ -22,7 +23,7 @@ func _pressed():
 	player.durability = durability + Global.extra_durability
 	player.max_durability = durability + Global.extra_durability
 	player.attack_size = attack_size
-	# change weapon texture/image
+	weapon_icon.texture = texture_normal
 
 func _physics_process(_delta):
 	for label in cost_labels:

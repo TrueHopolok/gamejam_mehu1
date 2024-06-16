@@ -15,6 +15,8 @@ var waves_completed : int = 0
 
 var extra_melee_damage : float = 0
 var extra_durability : int = 0
+var extra_projectile_damage : float = 0
+var extra_raft_health : float = 0
 
 func fish_killed(prize : Array[int]):
 	fishes_alive -= 1
@@ -100,3 +102,4 @@ func load_game_over():
 
 func _ready():
 	Engine.max_fps = 30
+	

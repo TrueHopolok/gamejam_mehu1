@@ -74,9 +74,6 @@ func attack():
 		durability -= 1
 		dmg_collider.scale.x = attack_size
 		damage = weapon_damage
-		if durability <= 0:
-			# ANIMATION: show hand as a weapon through global
-			pass
 	else:
 		dmg_collider.scale.x = 1
 		damage = basic_damage
@@ -96,9 +93,18 @@ func _input(event):
 	if place_pos.x < border_left or place_pos.x > border_right: return
 	if place_pos.y < border_top or place_pos.y > border_bottom: return
 	place_area.global_position = place_pos
+	var main: Node2D
+	for element in get_tree().get_root().get_children():
+		if element.name == "Main":
+			main = element
+			break
 	var instance : Node2D = placeables[current_placeable].instantiate()
+	main.add_child(instance)
+	instance.global_position = place_pos
 	if current_placeable != 3:
-		if len(place_area.get_overlapping_areas()) > 0: return
+		if len(place_area.get_overlapping_areas()) > 0: 
+			instance.queue_free()
+			return
 	else:
 		var is_possible : bool = false
 		for area in place_area.get_overlapping_areas():
@@ -107,16 +113,12 @@ func _input(event):
 			if parent.is_empty:
 				parent.is_empty = false
 				parent.building = instance
+				instance.global_position = parent.global_position
 				is_possible = true
 				break
-		if not is_possible: return
-	var main: Node2D
-	for element in get_tree().get_root().get_children():
-		if element.name == "Main":
-			main = element
-			break
-	main.add_child(instance)
-	instance.global_position = place_pos
+		if not is_possible: 
+			instance.queue_free()
+			return
 	for i in range(min(len(Global.materials_amount), len(place_costs[current_placeable]))):
 		Global.materials_amount[i] -= place_costs[current_placeable][i]
 	
