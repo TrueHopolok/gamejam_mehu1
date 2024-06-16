@@ -58,6 +58,16 @@ position = Vector2(220, 83)
 regen_time = 150
 invincability_time = 30
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = 0
+limit_right = 320
+limit_bottom = 180
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+editor_draw_limits = true
+
 [node name="FishPirahna" parent="." instance=ExtResource("4_qco1a")]
 position = Vector2(102, 88)
 

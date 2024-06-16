@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://0l0r6ulwoyts"]
+[gd_scene load_steps=73 format=3 uid="uid://0l0r6ulwoyts"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_v4qo1"]
 [ext_resource type="Texture2D" uid="uid://codo4ufookglc" path="res://textures/player/Player_idle.png" id="2_kxncc"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dbibxag8a4081" path="res://textures/player/Player_swim_attack.png" id="7_o1muf"]
 [ext_resource type="Texture2D" uid="uid://de5frkpefytu5" path="res://textures/player/Player_swim_run.png" id="8_cnthv"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="10_uhybp"]
+[ext_resource type="AudioStream" uid="uid://cxfstmtorqwhg" path="res://sounds/Damage.wav" id="15_3hvj3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p18u"]
 size = Vector2(16, 17)
@@ -505,3 +506,7 @@ offset_bottom = -12.0
 theme = ExtResource("10_uhybp")
 value = 100.0
 show_percentage = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_3hvj3")
+volume_db = 3.0

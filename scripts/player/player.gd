@@ -39,6 +39,7 @@ class_name Player extends Node2D
 
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 @onready var animated_sprite_splash : AnimatedSprite2D = $AnimatedSpriteSplash
+@onready var audio_stream_player = $AudioStreamPlayer
 
 var damage : float
 var velocity : Vector2
@@ -59,6 +60,7 @@ func die():
 	queue_free()
 
 func injured(area : Area2D):
+	audio_stream_player.play()
 	if current_invicability > 0:
 		return
 	if area.name == "DmgArea":
