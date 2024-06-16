@@ -6,22 +6,18 @@ extends Node2D
 @export var reload_time : int = 90
 
 @onready var spawn_marker : Marker2D = $SpawnMarker
-@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 
 var target : Node2D = null
-var attackable_objects = [Fish]
 var prev_direction : int = 1
 var current_reload : int = 0
 
 func find_target():
-	for main in get_tree().get_root().get_children():
-		for element in main.get_children():
-			for type_name in attackable_objects:
-				if is_instance_of(element, type_name):
-					if target == null: target = element
-					elif global_position.distance_squared_to(target.global_position) > \
-						global_position.distance_squared_to(element.global_position):
-						target = element	
+	for element in get_tree().get_nodes_in_group("Enemy"):
+		if target == null: target = element
+		elif global_position.distance_squared_to(target.global_position) > \
+			global_position.distance_squared_to(element.global_position):
+			target = element	
 
 func _ready():
 	current_reload = reload_time

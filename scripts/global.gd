@@ -13,7 +13,8 @@ var fishes_killed : int = 0
 var fishes_alive : int = 0
 var waves_completed : int = 0
 
-var strength : float = 0
+var extra_melee_damage : float = 0
+var extra_durability : int = 0
 
 func fish_killed(prize : Array[int]):
 	fishes_alive -= 1

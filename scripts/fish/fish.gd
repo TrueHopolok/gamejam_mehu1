@@ -19,24 +19,20 @@ signal died
 @onready var dmg_collider : CollisionShape2D = $DmgArea/DmgBox
 @onready var hurt_area : Area2D = $HurtArea
 @onready var health_bar : ProgressBar = $HealthBar
-@onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 
 var current_reload : int = 0
 var target : Node2D = null
 var prev_direction : int = 1
 var velocity : Vector2
-var attackable_objects : Array = [Player, Raft]
 var health : float = 0
 
 func find_target():
-	for main in get_tree().get_root().get_children():
-		for element in main.get_children():
-			for type_name in attackable_objects:
-				if is_instance_of(element, type_name):
-					if target == null: target = element
-					elif global_position.distance_squared_to(target.global_position) > \
-						global_position.distance_squared_to(element.global_position):
-						target = element
+	for element in get_tree().get_nodes_in_group("Attackable"):
+		if target == null: target = element
+		elif global_position.distance_squared_to(target.global_position) > \
+			global_position.distance_squared_to(element.global_position):
+			target = element
 
 func attack():
 	if current_reload <= 0:
