@@ -8,7 +8,7 @@ var fishes_types : Array[PackedScene] = \
 []
 var unlocked_fish = 0
 var materials_amount : Array[int] = \
-[999, 999, 999, 999]
+[0, 0, 0, 0]
 var fishes_killed : int = 0
 var fishes_alive : int = 0
 var waves_completed : int = 0

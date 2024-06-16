@@ -21,20 +21,21 @@ content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.707967, 0.707967, 0.707966, 1)
+bg_color = Color(0.264996, 0.777977, 0.91691, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ux4gy"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
+bg_color = Color(0.43177, 0.615344, 0.819724, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hbxfg"]
 content_margin_left = 0.0
 content_margin_top = 0.0
 content_margin_right = 0.0
 content_margin_bottom = 0.0
-bg_color = Color(0.628523, 0.604947, 0.466862, 1)
+bg_color = Color(0.193046, 0.466489, 0.690027, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlw4s"]
 
@@ -58,7 +59,8 @@ border_color = Color(0.831373, 0.588235, 0, 1)
 border_blend = true
 
 [resource]
-default_font_size = 31
+default_font = ExtResource("1_bqsb5")
+default_font_size = 8
 Button/styles/disabled = SubResource("StyleBoxFlat_3scfq")
 Button/styles/focus = SubResource("StyleBoxFlat_8xtt1")
 Button/styles/hover = SubResource("StyleBoxFlat_4fu76")

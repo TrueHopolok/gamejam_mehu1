@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_nm15k"]
 [ext_resource type="Texture2D" uid="uid://cyjp4vq0qqfw1" path="res://textures/UI/Fist.png" id="2_0sjmc"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_6foxy"]
-[ext_resource type="Script" path="res://scenes/weapon_icon.gd" id="3_bjn15"]
+[ext_resource type="Script" path="res://scripts/hud/weapon_icon.gd" id="3_ybddw"]
 [ext_resource type="Script" path="res://scripts/hud/durability_bar.gd" id="4_bu615"]
 [ext_resource type="Script" path="res://scripts/hud/weapon_button.gd" id="4_gcdtb"]
 [ext_resource type="Script" path="res://scripts/hud/melee_button.gd" id="5_km1wq"]
@@ -70,7 +70,7 @@ script = ExtResource("1_nm15k")
 offset_right = 48.0
 offset_bottom = 48.0
 texture = ExtResource("2_0sjmc")
-script = ExtResource("3_bjn15")
+script = ExtResource("3_ybddw")
 regular_texture = ExtResource("2_0sjmc")
 
 [node name="WeaponDurability" type="ProgressBar" parent="."]
