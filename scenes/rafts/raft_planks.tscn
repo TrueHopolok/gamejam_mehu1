@@ -28,7 +28,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="RaftPlanks" type="Node2D"]
+[node name="RaftPlanks" type="Node2D" groups=["Attackable"]]
 script = ExtResource("1_aw1n2")
 
 [node name="HurtArea" type="Area2D" parent="."]

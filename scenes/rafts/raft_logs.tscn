@@ -28,8 +28,9 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="RaftLogs" type="Node2D"]
+[node name="RaftLogs" type="Node2D" groups=["Attackable"]]
 script = ExtResource("1_icdw0")
+max_health = 50.0
 
 [node name="HurtArea" type="Area2D" parent="."]
 collision_layer = 12

@@ -108,7 +108,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="FishPirahna" type="Node2D"]
+[node name="FishPirahna" type="Node2D" groups=["Enemy"]]
 z_index = 1
 script = ExtResource("1_cbqxu")
 

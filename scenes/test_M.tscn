@@ -27,18 +27,12 @@ position = Vector2(102, 88)
 
 [node name="RaftPlanks" parent="." instance=ExtResource("5_gtefx")]
 position = Vector2(146, 86)
-max_health = null
-is_empty = null
 
 [node name="RaftLogs" parent="." instance=ExtResource("5_4x187")]
 position = Vector2(162, 86)
-max_health = null
-is_empty = null
 
 [node name="RaftMetal" parent="." instance=ExtResource("7_nytjc")]
 position = Vector2(178, 86)
-max_health = null
-is_empty = null
 
 [node name="JunkWood" parent="." instance=ExtResource("8_hjk8r")]
 position = Vector2(309, 165)
