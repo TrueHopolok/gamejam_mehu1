@@ -102,3 +102,4 @@ func load_game_over():
 
 func _ready():
 	Engine.max_fps = 30
+	
