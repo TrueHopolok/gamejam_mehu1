@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtxmk7ouqpkl"
-path="res://.godot/imported/Raft_planks.png-23c0526620304e731274c0ac1dcad16e.ctex"
+uid="uid://bf6iwjjda465m"
+path="res://.godot/imported/Canon_attack.png-9fa0f59de7f168a25919d6116d1ef367.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/raft/Raft_planks.png"
-dest_files=["res://.godot/imported/Raft_planks.png-23c0526620304e731274c0ac1dcad16e.ctex"]
+source_file="res://textures/tower/Canon_attack.png"
+dest_files=["res://.godot/imported/Canon_attack.png-9fa0f59de7f168a25919d6116d1ef367.ctex"]
 
 [params]
 

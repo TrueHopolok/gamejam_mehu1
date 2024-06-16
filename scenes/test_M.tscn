@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=12 format=3 uid="uid://8rnooayg0lf3"]
 
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_72ht6"]
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="2_0b0l8"]
@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dq3h2p3ne3ja0" path="res://scenes/fish/fish_pirahna.tscn" id="4_qco1a"]
 [ext_resource type="PackedScene" uid="uid://bi8xlq3p31nwi" path="res://scenes/rafts/raft_logs.tscn" id="5_4x187"]
 [ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="5_gtefx"]
+[ext_resource type="PackedScene" uid="uid://dfxrmnyklf0mw" path="res://scenes/rafts/raft_metal.tscn" id="7_nytjc"]
+[ext_resource type="PackedScene" uid="uid://cxyxi3scmnmd1" path="res://scenes/junk/junkWood.tscn" id="8_hjk8r"]
+[ext_resource type="PackedScene" uid="uid://cp8wc0m211xyh" path="res://scenes/junk/junkRope.tscn" id="9_af4g7"]
+[ext_resource type="PackedScene" uid="uid://dpvjogotxba0w" path="res://scenes/junk/junkMetal.tscn" id="10_36npv"]
+[ext_resource type="PackedScene" uid="uid://dtfvx6n84gkqv" path="res://scenes/towers/tower.tscn" id="11_pjxq3"]
 
 [node name="TestM" type="Node2D"]
 
@@ -24,4 +29,22 @@ position = Vector2(102, 88)
 position = Vector2(146, 86)
 
 [node name="RaftLogs" parent="." instance=ExtResource("5_4x187")]
-position = Vector2(199, 82)
+position = Vector2(162, 86)
+
+[node name="RaftMetal" parent="." instance=ExtResource("7_nytjc")]
+position = Vector2(178, 86)
+
+[node name="JunkWood" parent="." instance=ExtResource("8_hjk8r")]
+position = Vector2(309, 165)
+
+[node name="JunkWood2" parent="." instance=ExtResource("9_af4g7")]
+position = Vector2(308, 43)
+
+[node name="JunkMetal" parent="." instance=ExtResource("10_36npv")]
+position = Vector2(296, 146)
+
+[node name="Tower" parent="." instance=ExtResource("11_pjxq3")]
+position = Vector2(161, 85)
+
+[node name="FishPirahna2" parent="." instance=ExtResource("4_qco1a")]
+position = Vector2(263, 109)

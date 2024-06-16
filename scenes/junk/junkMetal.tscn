@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpvjogotxba0w"]
+
+[ext_resource type="Script" path="res://scripts/junk/junk.gd" id="1_bwbj4"]
+[ext_resource type="Texture2D" uid="uid://b5wyw0rat30sd" path="res://textures/junk/Metal_floaten.png" id="2_n0j20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6gww"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65q7g"]
+atlas = ExtResource("2_n0j20")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n15be"]
+atlas = ExtResource("2_n0j20")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npsho"]
+atlas = ExtResource("2_n0j20")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74qde"]
+atlas = ExtResource("2_n0j20")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwrn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65q7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n15be")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npsho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74qde")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="JunkMetal" type="Node2D"]
+z_index = 1
+script = ExtResource("1_bwbj4")
+
+[node name="CatchableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CatchableBox" type="CollisionShape2D" parent="CatchableArea"]
+shape = SubResource("RectangleShape2D_a6gww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mwrn7")
+autoplay = "default"
+frame_progress = 0.32928

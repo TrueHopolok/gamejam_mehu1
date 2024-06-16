@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwtxmk7ouqpkl"
-path="res://.godot/imported/Raft_planks.png-23c0526620304e731274c0ac1dcad16e.ctex"
+uid="uid://b5wyw0rat30sd"
+path="res://.godot/imported/Metal_floaten.png-9adcef7fd62295e5328270ec3645e299.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/raft/Raft_planks.png"
-dest_files=["res://.godot/imported/Raft_planks.png-23c0526620304e731274c0ac1dcad16e.ctex"]
+source_file="res://textures/junk/Metal_floaten.png"
+dest_files=["res://.godot/imported/Metal_floaten.png-9adcef7fd62295e5328270ec3645e299.ctex"]
 
 [params]
 

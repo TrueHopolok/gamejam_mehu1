@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bmka86r5mwrqj"]
 
 [ext_resource type="Script" path="res://scripts/player/projectile.gd" id="1_ompdt"]
-[ext_resource type="Texture2D" uid="uid://bpx44ywecp754" path="res://textures/error.png" id="1_vsmtf"]
+[ext_resource type="Texture2D" uid="uid://hessgd8l50ck" path="res://textures/tower/cannonball.png" id="2_ls3xa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3iti7"]
 size = Vector2(16, 16)
@@ -16,4 +16,4 @@ script = ExtResource("1_ompdt")
 shape = SubResource("RectangleShape2D_3iti7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_vsmtf")
+texture = ExtResource("2_ls3xa")

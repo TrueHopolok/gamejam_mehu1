@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dfxrmnyklf0mw"]
+
+[ext_resource type="Script" path="res://scripts/rafts/raft.gd" id="1_f4jib"]
+[ext_resource type="Texture2D" uid="uid://dwdlh2spmrtft" path="res://textures/raft/Raft_box.png" id="2_80keq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqaw6"]
+atlas = ExtResource("2_80keq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atwge"]
+atlas = ExtResource("2_80keq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5fvk"]
+atlas = ExtResource("2_80keq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0pc0"]
+atlas = ExtResource("2_80keq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6ig8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqaw6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atwge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5fvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0pc0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="RaftMetal" type="Node2D"]
+script = ExtResource("1_f4jib")
+
+[node name="HurtArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+shape = SubResource("RectangleShape2D_imlpb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e6ig8")
+autoplay = "default"
+frame_progress = 0.948936

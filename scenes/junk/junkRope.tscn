@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp8wc0m211xyh"]
+
+[ext_resource type="Script" path="res://scripts/junk/junk.gd" id="1_jiq8m"]
+[ext_resource type="Texture2D" uid="uid://cklw4rrebiib0" path="res://textures/junk/Rope_floaten.png" id="2_7xyyq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6gww"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7jxj"]
+atlas = ExtResource("2_7xyyq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7hqv"]
+atlas = ExtResource("2_7xyyq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxqqh"]
+atlas = ExtResource("2_7xyyq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fch8"]
+atlas = ExtResource("2_7xyyq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwrn7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7jxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7hqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxqqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fch8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="JunkRope" type="Node2D"]
+z_index = 1
+script = ExtResource("1_jiq8m")
+
+[node name="CatchableArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CatchableBox" type="CollisionShape2D" parent="CatchableArea"]
+shape = SubResource("RectangleShape2D_a6gww")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mwrn7")
+autoplay = "default"
+frame_progress = 0.32928

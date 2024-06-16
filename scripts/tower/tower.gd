@@ -6,6 +6,7 @@ extends Node2D
 @export var reload_time : int = 90
 
 @onready var spawn_marker : Marker2D = $SpawnMarker
+@onready var animated_sprite_2d = $AnimatedSprite2D
 
 var target : Node2D = null
 var attackable_objects = [Fish]
@@ -31,6 +32,7 @@ func _ready():
 	apply_scale(Vector2(prev_direction, 1))
 
 func _physics_process(_delta):
+	if animated_sprite_2d.frame == 5: animated_sprite_2d.play("idle")
 	find_target()
 	if current_reload > 0: current_reload -= 1
 	if target == null: return
@@ -41,6 +43,7 @@ func _physics_process(_delta):
 	if current_reload > 0: return
 	current_reload = reload_time
 	var instance = projectile_prefab.instantiate()
+	if animated_sprite_2d.animation == "idle": animated_sprite_2d.set_animation("attack")
 	add_child(instance)
 	instance.global_position = spawn_marker.global_position
 	instance.damage = projectile_damage

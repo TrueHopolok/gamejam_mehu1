@@ -1,13 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dj7u2hq5sywed"]
+[gd_scene load_steps=7 format=3 uid="uid://dj7u2hq5sywed"]
 
-[ext_resource type="Script" path="res://scripts/player/raft.gd" id="1_qmm75"]
-[ext_resource type="Texture2D" uid="uid://dbxaakhi3h6j7" path="res://textures/raft/Raft_planks.png" id="2_j4g2n"]
+[ext_resource type="Script" path="res://scripts/rafts/raft.gd" id="1_aw1n2"]
+[ext_resource type="Texture2D" uid="uid://cwtxmk7ouqpkl" path="res://textures/raft/Raft_planks.png" id="2_j4g2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
 size = Vector2(16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1bgp"]
+atlas = ExtResource("2_j4g2n")
+region = Rect2(0, 0, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kubsi"]
+atlas = ExtResource("2_j4g2n")
+region = Rect2(16, 0, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e6ig8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1bgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kubsi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
 [node name="RaftPlanks" type="Node2D"]
-script = ExtResource("1_qmm75")
+script = ExtResource("1_aw1n2")
 
 [node name="HurtArea" type="Area2D" parent="."]
 collision_layer = 4
@@ -16,5 +38,7 @@ collision_mask = 4
 [node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
 shape = SubResource("RectangleShape2D_imlpb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_j4g2n")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_e6ig8")
+autoplay = "default"
+frame_progress = 0.948936

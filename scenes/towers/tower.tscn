@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=3 uid="uid://dtfvx6n84gkqv"]
+
+[ext_resource type="Script" path="res://scripts/tower/tower.gd" id="1_a2nlh"]
+[ext_resource type="PackedScene" uid="uid://bmka86r5mwrqj" path="res://scenes/towers/projectile.tscn" id="2_80p01"]
+[ext_resource type="Texture2D" uid="uid://bf6iwjjda465m" path="res://textures/tower/Canon_attack.png" id="3_ac5d8"]
+[ext_resource type="Texture2D" uid="uid://b3wd6vr68xl84" path="res://textures/tower/Canon_idle.png" id="4_iw0wd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlwai"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vdcu"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs844"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lln4"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd7bo"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7215t"]
+atlas = ExtResource("3_ac5d8")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byicf"]
+atlas = ExtResource("4_iw0wd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iamv6"]
+atlas = ExtResource("4_iw0wd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ku1xj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlwai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vdcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs844")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lln4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd7bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7215t")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byicf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iamv6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
+}]
+
+[node name="Tower" type="Node2D"]
+script = ExtResource("1_a2nlh")
+projectile_prefab = ExtResource("2_80p01")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ku1xj")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+
+[node name="SpawnMarker" type="Marker2D" parent="."]
+position = Vector2(8, 0)
