@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjk6qhamudo86"]
+[gd_scene load_steps=6 format=3 uid="uid://bjk6qhamudo86"]
 
+[ext_resource type="AudioStream" uid="uid://bffjvcxmviiek" path="res://sounds/Background_music_menu.wav" id="1_258an"]
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_iu528"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_8d82o"]
+[ext_resource type="Script" path="res://scripts/hud/infinite_music.gd" id="2_e2t4j"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="3_mxh0k"]
 
 [node name="Main" type="Control"]
@@ -11,6 +13,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_258an")
+volume_db = -35.0
+script = ExtResource("2_e2t4j")
 
 [node name="Background" parent="." instance=ExtResource("1_iu528")]
 
@@ -45,13 +52,15 @@ script = ExtResource("3_mxh0k")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 128.0
-offset_right = 272.0
-offset_bottom = 180.0
+offset_left = 13.0
+offset_top = 113.0
+offset_right = 301.0
+offset_bottom = 176.0
 theme = ExtResource("2_8d82o")
-text = "Arrows or WASD to move;
-LMB to attack; RMB to build.
+text = "WASD or Arrows to move;
+LMB to attack;
+RMB to build;
 Use interface to craft weapons
 and to select what to build.
-Survive as long as possible!"
+SURVIVE . . ."
+vertical_alignment = 1

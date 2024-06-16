@@ -28,6 +28,7 @@ class_name Player extends Node2D
 @export var placeables : Array[PackedScene]
 @export var place_costs : Array[Array]
 @export var min_place_distance : float = 400
+@export var color_time : int = 20
 
 @onready var dmg_collider : CollisionShape2D = $PlayerDmgArea/PlayerDmgBox
 @onready var hurt_area : Area2D = $HurtArea
@@ -40,6 +41,9 @@ class_name Player extends Node2D
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 @onready var animated_sprite_splash : AnimatedSprite2D = $AnimatedSpriteSplash
 
+@onready var audio_damage : AudioStreamPlayer = $DamageSFX
+
+var current_color : int = 0
 var damage : float
 var velocity : Vector2
 var prev_direction : int = 1
@@ -62,8 +66,10 @@ func injured(area : Area2D):
 	if current_invicability > 0:
 		return
 	if area.name == "DmgArea":
-		# ANIMATION: play damage animation (make player red)
+		audio_damage.play()
+		animated_sprite_2d.modulate = Color(1, 0, 0)
 		health -= 1
+		current_color = color_time
 		current_regen = regen_time
 		current_invicability = invincability_time
 		if health <= 0: die()
@@ -81,31 +87,26 @@ func attack():
 	current_reload = attack_reload
 	damage += Global.extra_melee_damage
 
-func _input(event):
-	if not event is InputEventMouseButton: return
-	if not event.button_index == MOUSE_BUTTON_RIGHT: return
-	if not event.is_pressed(): return
+func place():
 	for i in range(min(len(Global.materials_amount), len(place_costs[current_placeable]))):
 		if Global.materials_amount[i] < place_costs[current_placeable][i]:
 			return
-	var place_pos : Vector2 = get_viewport().get_mouse_position()
-	if place_pos.distance_squared_to(global_position) > min_place_distance: return
-	if place_pos.x < border_left or place_pos.x > border_right: return
-	if place_pos.y < border_top or place_pos.y > border_bottom: return
-	place_area.global_position = place_pos
-	var main: Node2D
-	for element in get_tree().get_root().get_children():
-		if element.name == "Main":
-			main = element
-			break
+	var place_pos : Vector2 = place_area.global_position
+	if place_pos.distance_squared_to(global_position) > min_place_distance: 
+		return
+	if place_pos.x < border_left or place_pos.x > border_right: 
+		return
+	if place_pos.y < border_top or place_pos.y > border_bottom: 
+		return
+	var main = get_tree().get_first_node_in_group("Main")
 	var instance : Node2D = placeables[current_placeable].instantiate()
 	main.add_child(instance)
 	instance.global_position = place_pos
 	if current_placeable != 3:
-		if len(place_area.get_overlapping_areas()) > 0: 
+		if len(place_area.get_overlapping_areas()) > 0:
 			instance.queue_free()
 			return
-	else:
+	if current_placeable == 3:
 		var is_possible : bool = false
 		for area in place_area.get_overlapping_areas():
 			var parent = area.get_parent()
@@ -132,13 +133,19 @@ func _ready():
 func _physics_process(_delta):
 	if health <= 0: return
 	
+	if current_color > 0: 
+		current_color -= 1
+		if current_color == 0: animated_sprite_2d.modulate = Color(1, 1, 1)
+	
 	is_on_ground = len(water_area.get_overlapping_areas()) > 0
 	if is_on_ground: current_drowning = 0
 	else: 
 		current_drowning += 1
 		if current_drowning >= drowning_time:
-			# ANIMATION: play damage animation (make player red)sss
+			audio_damage.play()
+			animated_sprite_2d.modulate = Color(0, 0.4, 1)
 			health -= 1
+			current_color = color_time
 			current_regen = regen_time
 			current_drowning = 0
 			if health <= 0: die()
@@ -154,8 +161,9 @@ func _physics_process(_delta):
 	if health < max_health and is_on_ground:
 		current_regen -= 1
 		if current_regen <= 0:
-			# ANIMATION: play healing animation (make him green)
+			animated_sprite_2d.modulate = Color(0, 1, 0)
 			health += 1
+			current_color = color_time
 			current_regen = regen_time
 	health_bar.visible = max_health > health
 	health_bar.value = health * 100 / max_health
@@ -179,6 +187,9 @@ func _physics_process(_delta):
 		animated_sprite_splash.stop()
 		animated_sprite_splash.frame = 0
 		is_splash_animation = false
+	
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		place()
 	
 	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * speed
 	if velocity.length_squared() == 0:
