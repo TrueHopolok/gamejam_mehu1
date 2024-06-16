@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjk6qhamudo86"]
 
-[ext_resource type="AudioStream" uid="uid://boxp33u2mfpt1" path="res://sounds/Background_music.wav" id="1_04smy"]
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_iu528"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_8d82o"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="3_mxh0k"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,10 +11,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_04smy")
-volume_db = -20.0
 
 [node name="Background" parent="." instance=ExtResource("1_iu528")]
 
@@ -45,3 +41,17 @@ offset_right = 192.0
 offset_bottom = 102.0
 theme = ExtResource("2_8d82o")
 text = "Start"
+script = ExtResource("3_mxh0k")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 128.0
+offset_right = 272.0
+offset_bottom = 180.0
+theme = ExtResource("2_8d82o")
+text = "Arrows or WASD to move;
+LMB to attack; RMB to build.
+Use interface to craft weapons
+and to select what to build.
+Survive as long as possible!"
