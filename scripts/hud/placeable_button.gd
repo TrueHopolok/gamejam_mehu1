@@ -12,6 +12,6 @@ func _pressed():
 	player.current_placeable = placeable_id
 	placeable_texture.texture = texture_normal
 
-func _physics_process(_delta):
+func _process(_delta):
 	for label in cost_labels:
 		label.visible = is_hovered()

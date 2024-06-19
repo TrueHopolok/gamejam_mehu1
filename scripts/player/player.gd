@@ -13,9 +13,9 @@ class_name Player extends Node2D
 @export var border_right : int = 32+16*13
 
 @export_subgroup("Health Properties")
-@export var max_health : int = 3
-@export var regen_time : int = 150
-@export var invincability_time : int = 30
+@export var max_health : int = 4
+@export var regen_time : int = 300
+@export var invincability_time : int = 45
 @export var drowning_time : int = 300
 
 @export_subgroup("Attack Properties")
@@ -24,7 +24,7 @@ class_name Player extends Node2D
 @export var basic_attack_size : float = 1.0
 
 @export_subgroup("Extra Properties")
-@export var speed : float = 1
+@export var speed : float = 2.0
 @export var placeables : Array[PackedScene]
 @export var place_costs : Array[Array]
 @export var min_place_distance : float = 400
@@ -41,7 +41,7 @@ class_name Player extends Node2D
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 @onready var animated_sprite_splash : AnimatedSprite2D = $AnimatedSpriteSplash
 
-@onready var audio_damage : AudioStreamPlayer = $DamageSFX
+@onready var main = get_tree().get_first_node_in_group("SCENE_main")
 
 var current_color : int = 0
 var damage : float
@@ -58,21 +58,24 @@ var is_splash_animation : bool = false
 var current_placeable : int = 0
 
 func die():
-	# ANIMATION: play death animation and end game
 	Global.load_game_over()
 	queue_free()
+
+func damaged(damage_color : Color):
+	var audio : AudioStreamPlayer = get_tree().get_first_node_in_group("SFX_damage")
+	if audio != null: audio.play()
+	animated_sprite_2d.modulate = damage_color
+	health -= 1
+	current_color = color_time
+	current_regen = regen_time
+	current_invicability = invincability_time
+	if health <= 0: die()
 
 func injured(area : Area2D):
 	if current_invicability > 0:
 		return
 	if area.name == "DmgArea":
-		audio_damage.play()
-		animated_sprite_2d.modulate = Color(1, 0, 0)
-		health -= 1
-		current_color = color_time
-		current_regen = regen_time
-		current_invicability = invincability_time
-		if health <= 0: die()
+		damaged(Color(1, 0, 0))
 
 func attack():
 	if current_reload > 0: return
@@ -98,7 +101,7 @@ func place():
 		return
 	if place_pos.y < border_top or place_pos.y > border_bottom: 
 		return
-	var main = get_tree().get_first_node_in_group("Main")
+	if main == null: return
 	var instance : Node2D = placeables[current_placeable].instantiate()
 	main.add_child(instance)
 	instance.global_position = place_pos
@@ -130,34 +133,36 @@ func _ready():
 	dmg_collider.disabled = true
 	animated_sprite_splash.play("default")
 
-func _physics_process(_delta):
+func _process(_delta):
 	if health <= 0: return
 	
+	## COLOR RESET ##
 	if current_color > 0: 
 		current_color -= 1
 		if current_color == 0: animated_sprite_2d.modulate = Color(1, 1, 1)
 	
+	## PLATFORM / DROWNING CHECK ##
 	is_on_ground = len(water_area.get_overlapping_areas()) > 0
 	if is_on_ground: current_drowning = 0
 	else: 
 		current_drowning += 1
 		if current_drowning >= drowning_time:
-			audio_damage.play()
-			animated_sprite_2d.modulate = Color(0, 0.4, 1)
-			health -= 1
-			current_color = color_time
-			current_regen = regen_time
 			current_drowning = 0
-			if health <= 0: die()
+			damaged(Color(0, 0.4, 1))
+	## DROWNING BAR ##
 	water_bar.visible = not is_on_ground
 	water_bar.value = current_drowning * 100 / drowning_time
 	
+	## ATTACK RELOAD ##
 	if current_reload > 0:
 		current_reload -= 1
 		dmg_collider.disabled = true
+		
+	## INVINCABILITY TIMER ##
 	if current_invicability > 0:
 		current_invicability -= 1
 	
+	##  HEALTH REGENERATION ##
 	if health < max_health and is_on_ground:
 		current_regen -= 1
 		if current_regen <= 0:
@@ -166,12 +171,13 @@ func _physics_process(_delta):
 			current_color = color_time
 			current_regen = regen_time
 	health_bar.visible = max_health > health
-	health_bar.value = health * 100 / max_health
+	health_bar.value = (health - 1) * 25
 	
+	## FACING DIRECTION ##
 	var direction = sign(global_position.direction_to(get_viewport().get_mouse_position()).x)
 	if direction != 0 and prev_direction != direction:
 		prev_direction = - prev_direction
-		apply_scale(Vector2(-1, 1))
+		apply_scale(Vector2(-1, 1)) 
 		if prev_direction == 1: 
 			water_bar.fill_mode = ProgressBar.FILL_BEGIN_TO_END
 			health_bar.fill_mode = ProgressBar.FILL_BEGIN_TO_END
@@ -179,7 +185,8 @@ func _physics_process(_delta):
 			water_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 			health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
 	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+	## ATTACK ACTIVATION ##
+	if Input.is_action_pressed("attack"):
 		if !is_splash_animation: animated_sprite_splash.play("default")
 		is_splash_animation = true
 		attack()
@@ -188,10 +195,12 @@ func _physics_process(_delta):
 		animated_sprite_splash.frame = 0
 		is_splash_animation = false
 	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+	## PLACE ACTIVATION ##
+	if Input.is_action_pressed("build"):
 		place()
 	
-	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down") * speed
+	## MOVEMENT ##
+	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed
 	if velocity.length_squared() == 0:
 		if is_on_ground:	
 			if is_splash_animation: animated_sprite_2d.play("idle_attack")
@@ -199,7 +208,6 @@ func _physics_process(_delta):
 		else:
 			if is_splash_animation: animated_sprite_2d.play("swim_attack")	
 			else: animated_sprite_2d.play("swim_idle")
-		pass
 	else:
 		if is_on_ground:
 			if is_splash_animation: animated_sprite_2d.play("run_attack")
@@ -207,6 +215,5 @@ func _physics_process(_delta):
 		else:
 			if is_splash_animation: animated_sprite_2d.play("swim_attack")	
 			else: animated_sprite_2d.play("swim_run")	
-		pass
 	global_position.x = clampf(global_position.x + velocity.x, border_left, border_right)
 	global_position.y = clampf(global_position.y + velocity.y, border_top, border_bottom)

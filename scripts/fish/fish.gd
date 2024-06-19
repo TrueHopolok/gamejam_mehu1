@@ -9,11 +9,11 @@ signal died
 @export_subgroup("Attack Properties")
 @export var damage : float = 1
 @export var dmg_increase : float = 1.3
-@export var attack_reload : int = 30
+@export var attack_reload : int = 17
 
 @export_subgroup("Extra Properties")
 @export var min_distance : float = 10
-@export var speed : float = 0.5
+@export var speed : float = 1.0
 @export var prize : Array[int] = [0, 0, 0, 1]
 
 @onready var dmg_collider : CollisionShape2D = $DmgArea/DmgBox
@@ -28,7 +28,7 @@ var velocity : Vector2
 var health : float = 0
 
 func find_target():
-	for element in get_tree().get_nodes_in_group("Attackable"):
+	for element in get_tree().get_nodes_in_group("ENTITY_allies"):
 		if target == null: target = element
 		elif global_position.distance_squared_to(target.global_position) > \
 			global_position.distance_squared_to(element.global_position):
@@ -55,8 +55,10 @@ func injured(area : Area2D):
 
 func _ready():
 	find_target()
-	prev_direction = sign(global_position.direction_to(target.global_position).x)
-	if prev_direction == 0: prev_direction = 1
+	if target == null: prev_direction = 1
+	else: 
+		prev_direction = sign(global_position.direction_to(target.global_position).x)
+		if prev_direction == 0: prev_direction = 1
 	apply_scale(Vector2(prev_direction, 1))
 	if prev_direction == 1: health_bar.fill_mode = ProgressBar.FILL_BEGIN_TO_END
 	else: health_bar.fill_mode = ProgressBar.FILL_END_TO_BEGIN
@@ -66,13 +68,15 @@ func _ready():
 		damage += 0.5 * pow(dmg_increase, int(Global.waves_completed / 5) - 1) 
 	health = max_health
 
-func _physics_process(_delta):
+func _process(_delta):
 	if current_reload > 0:
 		current_reload -= 1
 		dmg_collider.disabled = true
 	
 	find_target()
-	if target == null: return
+	if target == null: 
+		animated_sprite_2d.play("swim")
+		return
 	
 	velocity = global_position.direction_to(target.global_position) * speed
 	var direction = sign(global_position.direction_to(target.global_position).x)

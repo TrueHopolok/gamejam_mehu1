@@ -19,5 +19,5 @@ func _pressed():
 	cost_fish += cost_increase
 	cost_label.text = str(cost_fish)
 
-func _physics_process(_delta):
+func _process(_delta):
 	cost_label.visible = is_hovered()

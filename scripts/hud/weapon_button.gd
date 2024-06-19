@@ -25,6 +25,6 @@ func _pressed():
 	player.attack_size = attack_size
 	weapon_icon.texture = texture_normal
 
-func _physics_process(_delta):
+func _process(_delta):
 	for label in cost_labels:
 		label.visible = is_hovered()

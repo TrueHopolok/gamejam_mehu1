@@ -28,7 +28,7 @@ animations = [{
 "speed": 1.0
 }]
 
-[node name="RaftPlanks" type="Node2D" groups=["Attackable"]]
+[node name="RaftPlanks" type="Node2D" groups=["ENTITY_allies"]]
 script = ExtResource("1_iobuf")
 
 [node name="HurtArea" type="Area2D" parent="."]

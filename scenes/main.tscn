@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=9 format=3 uid="uid://8rnooayg0lf3"]
 
+[ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="1_2odjj"]
 [ext_resource type="AudioStream" uid="uid://7bfyggglbhbd" path="res://sounds/Next_wave.wav" id="2_31bbx"]
 [ext_resource type="AudioStream" uid="uid://boxp33u2mfpt1" path="res://sounds/Background_music.wav" id="2_g5kis"]
 [ext_resource type="Script" path="res://scripts/hud/infinite_music.gd" id="3_h3ege"]
@@ -8,13 +9,16 @@
 [ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player/player.tscn" id="5_rhthm"]
 [ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="6_mgc4w"]
 
-[node name="Main" type="Node2D" groups=["Main"]]
+[node name="Main" type="Node2D" groups=["SCENE_main"]]
 
-[node name="NextWaveSFX" type="AudioStreamPlayer" parent="." groups=["NextWave"]]
+[node name="DamageSFX" type="AudioStreamPlayer" parent="." groups=["SFX_damage"]]
+stream = ExtResource("1_2odjj")
+
+[node name="NextWaveSFX" type="AudioStreamPlayer" parent="." groups=["SFX_nextwave"]]
 stream = ExtResource("2_31bbx")
 volume_db = -10.0
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
+[node name="HardMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_g5kis")
 volume_db = -35.0
 script = ExtResource("3_h3ege")
@@ -54,8 +58,6 @@ color = Color(0.0784314, 0.298039, 0.490196, 0.14902)
 [node name="Player" parent="." instance=ExtResource("5_rhthm")]
 z_index = 2
 position = Vector2(146, 83)
-regen_time = 150
-invincability_time = 30
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(1.2, 1.2)

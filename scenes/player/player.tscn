@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://0l0r6ulwoyts"]
+[gd_scene load_steps=72 format=3 uid="uid://0l0r6ulwoyts"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_v4qo1"]
 [ext_resource type="Texture2D" uid="uid://codo4ufookglc" path="res://textures/player/Player_idle.png" id="2_kxncc"]
@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://dbibxag8a4081" path="res://textures/player/Player_swim_attack.png" id="7_o1muf"]
 [ext_resource type="Texture2D" uid="uid://de5frkpefytu5" path="res://textures/player/Player_swim_run.png" id="8_cnthv"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="10_uhybp"]
-[ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="15_cyflr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p18u"]
 size = Vector2(16, 17)
@@ -23,7 +22,7 @@ size = Vector2(16, 17)
 size = Vector2(16, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7yq1n"]
-size = Vector2(12, 24)
+size = Vector2(16, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_37ycn"]
 size = Vector2(10, 10)
@@ -433,11 +432,8 @@ border_width_bottom = 2
 border_color = Color(0.831373, 0.588235, 0, 1)
 border_blend = true
 
-[node name="Player" type="Node2D" groups=["Attackable", "Player"]]
+[node name="Player" type="Node2D" groups=["ENTITY_allies", "Player"]]
 script = ExtResource("1_v4qo1")
-regen_time = 300
-invincability_time = 160
-drowning_time = 600
 placeables = Array[PackedScene]([ExtResource("2_yrv08"), ExtResource("3_p8g48"), ExtResource("4_7sefx"), ExtResource("5_gks2k")])
 place_costs = Array[Array]([[2], [3, 2], [0, 1, 3], [2, 2, 3]])
 min_place_distance = 900.0
@@ -470,7 +466,7 @@ shape = SubResource("RectangleShape2D_6ato5")
 [node name="PlayerDmgArea" type="Area2D" parent="."]
 
 [node name="PlayerDmgBox" type="CollisionShape2D" parent="PlayerDmgArea"]
-position = Vector2(6, 0)
+position = Vector2(8, 0)
 shape = SubResource("RectangleShape2D_7yq1n")
 disabled = true
 
@@ -490,11 +486,12 @@ shape = SubResource("RectangleShape2D_aq4yn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6qxd6")
-animation = &"swim_attack"
+animation = &"idle_attack"
 
 [node name="AnimatedSpriteSplash" type="AnimatedSprite2D" parent="."]
-position = Vector2(10, 0)
+position = Vector2(10.25, 0)
 sprite_frames = SubResource("SpriteFrames_4w0hs")
+frame_progress = 0.0531856
 
 [node name="DrowningBar" type="ProgressBar" parent="."]
 offset_left = -8.0
@@ -514,6 +511,3 @@ offset_bottom = -12.0
 theme = ExtResource("10_uhybp")
 value = 100.0
 show_percentage = false
-
-[node name="DamageSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_cyflr")

@@ -1,8 +1,8 @@
-extends Node2D
+class_name Junk extends Node2D
 
 signal died
 
-@export var speed : float = 0.4
+@export var speed : float = 0.6
 @export var prize : Array[int] = \
 [0, 0, 0] 
 

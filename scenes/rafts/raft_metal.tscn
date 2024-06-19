@@ -42,7 +42,7 @@ animations = [{
 "speed": 3.0
 }]
 
-[node name="RaftMetal" type="Node2D" groups=["Attackable"]]
+[node name="RaftMetal" type="Node2D" groups=["ENTITY_allies"]]
 script = ExtResource("1_tq6g2")
 max_health = 100.0
 is_empty = false

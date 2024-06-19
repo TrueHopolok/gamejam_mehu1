@@ -1,4 +1,4 @@
 extends AudioStreamPlayer
 
-func _physics_process(_delta):
+func _process(_delta):
 	if not playing: play()
