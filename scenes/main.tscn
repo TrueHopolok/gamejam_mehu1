@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=10 format=3 uid="uid://8rnooayg0lf3"]
 
 [ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="1_2odjj"]
 [ext_resource type="AudioStream" uid="uid://7bfyggglbhbd" path="res://sounds/Next_wave.wav" id="2_31bbx"]
@@ -8,17 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="4_rl21x"]
 [ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player/player.tscn" id="5_rhthm"]
 [ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="6_mgc4w"]
+[ext_resource type="PackedScene" uid="uid://vltd82locog2" path="res://scenes/pause_menu.tscn" id="9_ky67f"]
 
 [node name="Main" type="Node2D" groups=["SCENE_main"]]
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." groups=["SFX_damage"]]
+process_mode = 3
 stream = ExtResource("1_2odjj")
 
 [node name="NextWaveSFX" type="AudioStreamPlayer" parent="." groups=["SFX_nextwave"]]
+process_mode = 3
 stream = ExtResource("2_31bbx")
 volume_db = -10.0
 
 [node name="HardMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("2_g5kis")
 volume_db = -35.0
 script = ExtResource("3_h3ege")
@@ -71,3 +75,5 @@ editor_draw_limits = true
 
 [node name="RaftPlanks" parent="." instance=ExtResource("6_mgc4w")]
 position = Vector2(146, 86)
+
+[node name="PauseMenu" parent="." instance=ExtResource("9_ky67f")]

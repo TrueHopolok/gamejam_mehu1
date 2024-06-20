@@ -491,7 +491,7 @@ animation = &"idle_attack"
 [node name="AnimatedSpriteSplash" type="AnimatedSprite2D" parent="."]
 position = Vector2(10.25, 0)
 sprite_frames = SubResource("SpriteFrames_4w0hs")
-frame_progress = 0.0531856
+frame_progress = 0.806171
 
 [node name="DrowningBar" type="ProgressBar" parent="."]
 offset_left = -8.0

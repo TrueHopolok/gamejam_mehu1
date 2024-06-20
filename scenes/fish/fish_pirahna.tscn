@@ -130,7 +130,7 @@ disabled = true
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_2fjvt")
 animation = &"attack"
-frame_progress = 0.601962
+frame_progress = 0.345968
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -9.0
