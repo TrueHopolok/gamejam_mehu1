@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjk6qhamudo86"]
+[gd_scene load_steps=9 format=3 uid="uid://bjk6qhamudo86"]
 
 [ext_resource type="AudioStream" uid="uid://bffjvcxmviiek" path="res://sounds/Background_music_menu.wav" id="1_258an"]
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="1_iu528"]
 [ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="2_8d82o"]
 [ext_resource type="Script" path="res://scripts/hud/infinite_music.gd" id="2_e2t4j"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="3_mxh0k"]
+[ext_resource type="PackedScene" uid="uid://b1n5oa70kpeor" path="res://scenes/mute_button.tscn" id="6_vxg8h"]
+[ext_resource type="Texture2D" uid="uid://cjnrtj3il52g" path="res://textures/UI/music_normal.png" id="7_8ghuf"]
+[ext_resource type="Texture2D" uid="uid://d072x8rd6kvfn" path="res://textures/UI/music_toggled.png" id="8_pq5rf"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -17,6 +20,7 @@ grow_vertical = 2
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_258an")
 volume_db = -35.0
+bus = &"Music"
 script = ExtResource("2_e2t4j")
 
 [node name="Background" parent="." instance=ExtResource("1_iu528")]
@@ -54,13 +58,32 @@ script = ExtResource("3_mxh0k")
 layout_mode = 0
 offset_left = 13.0
 offset_top = 113.0
-offset_right = 301.0
+offset_right = 261.0
 offset_bottom = 176.0
 theme = ExtResource("2_8d82o")
+theme_override_font_sizes/font_size = 0
 text = "WASD or Arrows to move;
-LMB to attack;
-RMB to build;
-Use interface to craft weapons
-and to select what to build.
-SURVIVE . . ."
+SPACE to attack;
+SHIFT or CTRL to build;
+ESC to pause;
+Use mouse to interact with UI;
+SURVIVE because FISHISGOOD. . ."
 vertical_alignment = 1
+
+[node name="MuteMusic" parent="." instance=ExtResource("6_vxg8h")]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 128.0
+offset_right = 305.0
+offset_bottom = 145.0
+texture_normal = ExtResource("7_8ghuf")
+texture_pressed = ExtResource("8_pq5rf")
+bus_name = "Music"
+
+[node name="MuteSFX" parent="." instance=ExtResource("6_vxg8h")]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 152.0
+offset_right = 305.0
+offset_bottom = 169.0
+bus_name = "SFX"

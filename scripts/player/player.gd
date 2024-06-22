@@ -58,7 +58,6 @@ var is_splash_animation : bool = false
 var current_placeable : int = 0
 
 func die():
-	Global.load_game_over()
 	queue_free()
 
 func damaged(damage_color : Color):

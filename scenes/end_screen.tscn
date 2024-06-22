@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpoadx82jcpl2"]
+
+[ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="1_6bf1e"]
+[ext_resource type="Script" path="res://scripts/hud/end_screen.gd" id="1_hud3b"]
+[ext_resource type="Script" path="res://scripts/hud/end_screen_button.gd" id="2_832xg"]
+[ext_resource type="Script" path="res://scripts/hud/end_screen_label.gd" id="4_ktbtu"]
+
+[node name="EndScreen" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hud3b")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0.215686, 0.215686, 0.215686, 0.67451)
+
+[node name="MainMenuButton" type="Button" parent="."]
+offset_left = 112.0
+offset_top = 128.0
+offset_right = 208.0
+offset_bottom = 152.0
+theme = ExtResource("1_6bf1e")
+text = "Return to
+main menu"
+script = ExtResource("2_832xg")
+
+[node name="GameOverTitle" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 64.0
+offset_right = 232.0
+offset_bottom = 87.0
+theme = ExtResource("1_6bf1e")
+theme_override_font_sizes/font_size = 16
+text = "Game over"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 80.0
+offset_top = 96.0
+offset_right = 256.0
+offset_bottom = 121.0
+theme = ExtResource("1_6bf1e")
+text = "Waves survived: 999
+Fishes killed: 9999"
+script = ExtResource("4_ktbtu")

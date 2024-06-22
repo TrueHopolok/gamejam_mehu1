@@ -382,7 +382,7 @@ texture_pressed = ExtResource("24_xyk6f")
 texture_hover = ExtResource("25_gt26u")
 script = ExtResource("5_km1wq")
 damage = 0.0
-durability = 1
+durability = 5
 
 [node name="CostLabel" type="Label" parent="DurabilityButton"]
 layout_mode = 0

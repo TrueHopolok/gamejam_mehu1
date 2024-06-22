@@ -82,10 +82,8 @@ func load_game_screen():
 	spawn_wave()
 
 func load_game_over():
-	await get_tree().create_timer(3.0).timeout 
 	get_tree().get_root().get_child(1).queue_free()
 	get_tree().get_root().add_child(main_menu_scene.instantiate())
-	pass
 
 func _ready():
 	Engine.max_fps = 30
