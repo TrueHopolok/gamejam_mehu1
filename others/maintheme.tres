@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=10 format=3 uid="uid://btp17lophm3xe"]
 
-[ext_resource type="FontFile" uid="uid://bmaw56pns6tm6" path="res://others/press-start.regular.ttf" id="1_bqsb5"]
+[ext_resource type="FontFile" uid="uid://bmaw56pns6tm6" path="res://others/press-start-regular.ttf" id="1_dnsyc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3scfq"]
 content_margin_left = 0.0
@@ -59,14 +59,14 @@ border_color = Color(0.831373, 0.588235, 0, 1)
 border_blend = true
 
 [resource]
-default_font = ExtResource("1_bqsb5")
 default_font_size = 8
+Button/fonts/font = ExtResource("1_dnsyc")
 Button/styles/disabled = SubResource("StyleBoxFlat_3scfq")
 Button/styles/focus = SubResource("StyleBoxFlat_8xtt1")
 Button/styles/hover = SubResource("StyleBoxFlat_4fu76")
 Button/styles/normal = SubResource("StyleBoxFlat_ux4gy")
 Button/styles/pressed = SubResource("StyleBoxFlat_hbxfg")
-Fonts/fonts/normal = ExtResource("1_bqsb5")
+Fonts/fonts/normal = ExtResource("1_dnsyc")
 Label/colors/font_color = Color(1, 1, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -76,7 +76,7 @@ Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 8
-Label/fonts/font = ExtResource("1_bqsb5")
+Label/fonts/font = ExtResource("1_dnsyc")
 Label/styles/normal = SubResource("StyleBoxEmpty_hlw4s")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_cideq")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_8d2il")
