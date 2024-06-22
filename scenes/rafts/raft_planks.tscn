@@ -1,27 +1,27 @@
 [gd_scene load_steps=7 format=3 uid="uid://dj7u2hq5sywed"]
 
 [ext_resource type="Script" path="res://scripts/player/raft.gd" id="1_iobuf"]
-[ext_resource type="Texture2D" uid="uid://cwtxmk7ouqpkl" path="res://textures/raft/Raft_planks.png" id="2_j4g2n"]
+[ext_resource type="Texture2D" uid="uid://cwtxmk7ouqpkl" path="res://textures/raft/Raft_planks.png" id="2_lwgs0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imlpb"]
 size = Vector2(16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p1bgp"]
-atlas = ExtResource("2_j4g2n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_koppc"]
+atlas = ExtResource("2_lwgs0")
 region = Rect2(0, 0, 16, 17)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kubsi"]
-atlas = ExtResource("2_j4g2n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjrpt"]
+atlas = ExtResource("2_lwgs0")
 region = Rect2(16, 0, 16, 17)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e6ig8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p1bgp")
+"texture": SubResource("AtlasTexture_koppc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kubsi")
+"texture": SubResource("AtlasTexture_tjrpt")
 }],
 "loop": true,
 "name": &"default",
