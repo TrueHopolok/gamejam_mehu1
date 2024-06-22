@@ -1,52 +1,52 @@
 [gd_scene load_steps=10 format=3 uid="uid://b8go5ghc6hwd2"]
 
 [ext_resource type="Script" path="res://scripts/background.gd" id="1_q11t2"]
-[ext_resource type="Texture2D" uid="uid://ba3aiq5tgmnpe" path="res://textures/UI/Background_ocean.png" id="2_5gvtn"]
+[ext_resource type="Texture2D" uid="uid://ba3aiq5tgmnpe" path="res://textures/UI/Background_ocean.png" id="2_g06d2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2chai"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_whatl"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(0, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0a2j2"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rv2xv"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(320, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8cp27"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q0dw"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(640, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mc5dx"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuaq7"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(960, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ryxw"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6y7n"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(1280, 0, 320, 180)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8oawr"]
-atlas = ExtResource("2_5gvtn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwt54"]
+atlas = ExtResource("2_g06d2")
 region = Rect2(1600, 0, 320, 180)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhfy0"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2chai")
+"texture": SubResource("AtlasTexture_whatl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0a2j2")
+"texture": SubResource("AtlasTexture_rv2xv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8cp27")
+"texture": SubResource("AtlasTexture_4q0dw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mc5dx")
+"texture": SubResource("AtlasTexture_kuaq7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2ryxw")
+"texture": SubResource("AtlasTexture_r6y7n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8oawr")
+"texture": SubResource("AtlasTexture_vwt54")
 }],
 "loop": true,
 "name": &"default",
@@ -64,3 +64,4 @@ motion_mirroring = Vector2(320, 0)
 position = Vector2(160, 90)
 sprite_frames = SubResource("SpriteFrames_fhfy0")
 autoplay = "default"
+frame_progress = 0.906068
