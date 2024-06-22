@@ -1,8 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=7 format=3 uid="uid://8rnooayg0lf3"]
 
-[ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="1_2odjj"]
-[ext_resource type="AudioStream" uid="uid://7bfyggglbhbd" path="res://sounds/Next_wave.wav" id="2_31bbx"]
-[ext_resource type="AudioStream" uid="uid://boxp33u2mfpt1" path="res://sounds/Background_music.wav" id="2_g5kis"]
 [ext_resource type="Script" path="res://scripts/hud/infinite_music.gd" id="3_h3ege"]
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="3_lcy1u"]
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="4_rl21x"]
@@ -14,16 +11,13 @@
 
 [node name="DamageSFX" type="AudioStreamPlayer" parent="." groups=["SFX_damage"]]
 process_mode = 3
-stream = ExtResource("1_2odjj")
 
 [node name="NextWaveSFX" type="AudioStreamPlayer" parent="." groups=["SFX_nextwave"]]
 process_mode = 3
-stream = ExtResource("2_31bbx")
 volume_db = -10.0
 
 [node name="HardMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("2_g5kis")
 volume_db = -35.0
 script = ExtResource("3_h3ege")
 
