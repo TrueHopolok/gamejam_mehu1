@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/hud/mute_button.gd" id="1_511gq"]
 [ext_resource type="Texture2D" uid="uid://h1uhtd6ue37g" path="res://textures/UI/sfx_normal.png" id="1_h12wo"]
-[ext_resource type="Texture2D" uid="uid://7ckkbmloiyxp" path="res://textures/UI/sfx_toogled.png" id="2_7r0ds"]
+[ext_resource type="Texture2D" uid="uid://d0ta3oempspyn" path="res://textures/UI/sfx_toggled.png" id="2_ag55t"]
 
 [node name="MuteButton" type="TextureButton"]
 offset_left = -8.0
@@ -12,5 +12,5 @@ offset_bottom = 9.0
 focus_mode = 0
 toggle_mode = true
 texture_normal = ExtResource("1_h12wo")
-texture_pressed = ExtResource("2_7r0ds")
+texture_pressed = ExtResource("2_ag55t")
 script = ExtResource("1_511gq")

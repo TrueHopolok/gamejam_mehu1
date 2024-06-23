@@ -10,7 +10,6 @@ extends TextureButton
 [0, 0, 0]
 
 @onready var player : Player = get_tree().get_first_node_in_group("Player")
-@onready var cost_labels = get_children()
 @onready var weapon_icon : TextureRect = get_parent().find_child("WeaponIcon")
 
 func _pressed():
@@ -26,5 +25,5 @@ func _pressed():
 	weapon_icon.texture = texture_normal
 
 func _process(_delta):
-	for label in cost_labels:
+	for label in get_children():
 		label.visible = is_hovered()

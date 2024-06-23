@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=15 format=3 uid="uid://8rnooayg0lf3"]
 
 [ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="1_bnoff"]
 [ext_resource type="AudioStream" uid="uid://7bfyggglbhbd" path="res://sounds/Next_wave.wav" id="2_p4a8w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/hud/infinite_music.gd" id="3_h3ege"]
 [ext_resource type="PackedScene" uid="uid://b8go5ghc6hwd2" path="res://scenes/background.tscn" id="3_lcy1u"]
 [ext_resource type="PackedScene" uid="uid://cfysvgiocjmd5" path="res://scenes/hud.tscn" id="4_rl21x"]
+[ext_resource type="AudioStream" uid="uid://bffjvcxmviiek" path="res://sounds/Background_music_menu.wav" id="5_hwjqb"]
 [ext_resource type="PackedScene" uid="uid://0l0r6ulwoyts" path="res://scenes/player/player.tscn" id="5_rhthm"]
 [ext_resource type="PackedScene" uid="uid://dj7u2hq5sywed" path="res://scenes/rafts/raft_planks.tscn" id="6_mgc4w"]
 [ext_resource type="Texture2D" uid="uid://cjnrtj3il52g" path="res://textures/UI/music_normal.png" id="8_l7upl"]
@@ -28,8 +29,15 @@ volume_db = -10.0
 bus = &"SFX"
 
 [node name="HardMusic" type="AudioStreamPlayer" parent="."]
-process_mode = 3
+process_mode = 1
 stream = ExtResource("3_13wba")
+volume_db = -35.0
+bus = &"Music"
+script = ExtResource("3_h3ege")
+
+[node name="EasyMusic" type="AudioStreamPlayer" parent="."]
+process_mode = 2
+stream = ExtResource("5_hwjqb")
 volume_db = -35.0
 bus = &"Music"
 script = ExtResource("3_h3ege")

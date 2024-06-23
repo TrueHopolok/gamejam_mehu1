@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7ckkbmloiyxp"
-path="res://.godot/imported/sfx_toogled.png-44d1ce2fd31bc2727a08c7261a76e373.ctex"
+uid="uid://d0ta3oempspyn"
+path="res://.godot/imported/sfx_toggled.png-55d27e8a840247dcd5d7c811128354e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/UI/sfx_toogled.png"
-dest_files=["res://.godot/imported/sfx_toogled.png-44d1ce2fd31bc2727a08c7261a76e373.ctex"]
+source_file="res://textures/UI/sfx_toggled.png"
+dest_files=["res://.godot/imported/sfx_toggled.png-55d27e8a840247dcd5d7c811128354e6.ctex"]
 
 [params]
 

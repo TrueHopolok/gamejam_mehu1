@@ -207,6 +207,20 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="DaggerButton"]
+visible = false
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 36.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Craft DAGGER
+DMG: 2 | Range: 1
+Durability: 10"
+
 [node name="SpearButton" type="TextureButton" parent="."]
 offset_top = 67.0
 offset_right = 17.0
@@ -255,6 +269,19 @@ theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
 
+[node name="Label" type="Label" parent="SpearButton"]
+visible = false
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 36.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Craft SPEAR
+DMG: 2.5 | Range: 1.5
+Durability: 30"
+
 [node name="AxeButton" type="TextureButton" parent="."]
 offset_top = 85.0
 offset_right = 16.0
@@ -302,6 +329,19 @@ theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "2"
 
+[node name="Label" type="Label" parent="AxeButton"]
+visible = false
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 36.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Craft AXE
+DMG: 4 | Range: 1
+Durability: 30"
+
 [node name="SwordButton" type="TextureButton" parent="."]
 offset_top = 103.0
 offset_right = 16.0
@@ -313,7 +353,7 @@ texture_pressed = ExtResource("21_ylofi")
 texture_hover = ExtResource("22_f3xcb")
 script = ExtResource("4_gcdtb")
 damage = 3.0
-durability = 50
+durability = 60
 cost = Array[int]([1, 1, 4])
 
 [node name="CostLabel" type="Label" parent="SwordButton"]
@@ -349,6 +389,19 @@ theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "4"
 
+[node name="Label" type="Label" parent="SwordButton"]
+visible = false
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 36.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Craft SWORD
+DMG: 3 | Range: 1
+Durability: 60"
+
 [node name="MeleeDmgButton" type="TextureButton" parent="."]
 offset_top = 140.0
 offset_right = 16.0
@@ -370,6 +423,17 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
+
+[node name="Label" type="Label" parent="MeleeDmgButton"]
+visible = false
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 17.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "+DMG"
 
 [node name="DurabilityButton" type="TextureButton" parent="."]
 offset_top = 158.0
@@ -394,6 +458,17 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
+
+[node name="Label" type="Label" parent="DurabilityButton"]
+visible = false
+offset_left = 18.0
+offset_top = 1.0
+offset_right = 122.0
+offset_bottom = 36.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "+Durability"
 
 [node name="BuildingIcon" type="TextureRect" parent="."]
 offset_left = 272.0
@@ -445,6 +520,19 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="PlanksButton"]
+visible = false
+offset_left = -114.0
+offset_top = 2.0
+offset_right = -6.0
+offset_bottom = 37.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Select PLANK RAFT
+HP: 20 | Canon: ok"
+horizontal_alignment = 2
+
 [node name="LogsButton" type="TextureButton" parent="."]
 offset_left = 303.0
 offset_top = 67.0
@@ -491,6 +579,19 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="LogsButton"]
+visible = false
+offset_left = -113.0
+offset_top = 2.0
+offset_right = -5.0
+offset_bottom = 37.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Select LOGS RAFT
+HP: 50 | Canon: ok"
+horizontal_alignment = 2
+
 [node name="MetalButton" type="TextureButton" parent="."]
 offset_left = 303.0
 offset_top = 85.0
@@ -536,6 +637,19 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "3"
+
+[node name="Label" type="Label" parent="MetalButton"]
+visible = false
+offset_left = -120.0
+offset_top = 3.0
+offset_right = -5.0
+offset_bottom = 38.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Select METAL WALL
+HP: 100 | Canon: no"
+horizontal_alignment = 2
 
 [node name="CanonButton" type="TextureButton" parent="."]
 offset_left = 303.0
@@ -584,6 +698,18 @@ theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "3"
 
+[node name="Label" type="Label" parent="CanonButton"]
+visible = false
+offset_left = -116.0
+offset_right = -1.0
+offset_bottom = 35.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "Select CANON
+DMG: 1"
+horizontal_alignment = 2
+
 [node name="RangeDmgButton" type="TextureButton" parent="."]
 offset_left = 303.0
 offset_top = 140.0
@@ -607,6 +733,17 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
+
+[node name="Label" type="Label" parent="RangeDmgButton"]
+visible = false
+offset_left = -116.0
+offset_right = -1.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "CANON DMG +"
+horizontal_alignment = 2
 
 [node name="RaftHealthButton" type="TextureButton" parent="."]
 offset_left = 303.0
@@ -632,3 +769,14 @@ theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "1"
+
+[node name="Label" type="Label" parent="RaftHealthButton"]
+visible = false
+offset_left = -116.0
+offset_right = -1.0
+offset_bottom = 16.0
+theme = ExtResource("2_6foxy")
+theme_override_fonts/font = ExtResource("3_ta40m")
+theme_override_font_sizes/font_size = 16
+text = "RAFT HP +"
+horizontal_alignment = 2

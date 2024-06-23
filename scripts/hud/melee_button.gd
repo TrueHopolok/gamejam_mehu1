@@ -20,4 +20,5 @@ func _pressed():
 	cost_label.text = str(cost_fish)
 
 func _process(_delta):
-	cost_label.visible = is_hovered()
+	for label in get_children():
+		label.visible = is_hovered()
