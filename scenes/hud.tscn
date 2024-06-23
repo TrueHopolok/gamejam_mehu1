@@ -271,6 +271,7 @@ text = "1"
 
 [node name="Label" type="Label" parent="SpearButton"]
 visible = false
+layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 122.0
@@ -331,6 +332,7 @@ text = "2"
 
 [node name="Label" type="Label" parent="AxeButton"]
 visible = false
+layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 122.0
@@ -391,6 +393,7 @@ text = "4"
 
 [node name="Label" type="Label" parent="SwordButton"]
 visible = false
+layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 122.0
@@ -426,6 +429,7 @@ text = "1"
 
 [node name="Label" type="Label" parent="MeleeDmgButton"]
 visible = false
+layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 122.0
@@ -461,6 +465,7 @@ text = "1"
 
 [node name="Label" type="Label" parent="DurabilityButton"]
 visible = false
+layout_mode = 0
 offset_left = 18.0
 offset_top = 1.0
 offset_right = 122.0
@@ -522,6 +527,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="PlanksButton"]
 visible = false
+layout_mode = 0
 offset_left = -114.0
 offset_top = 2.0
 offset_right = -6.0
@@ -581,6 +587,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="LogsButton"]
 visible = false
+layout_mode = 0
 offset_left = -113.0
 offset_top = 2.0
 offset_right = -5.0
@@ -640,6 +647,7 @@ text = "3"
 
 [node name="Label" type="Label" parent="MetalButton"]
 visible = false
+layout_mode = 0
 offset_left = -120.0
 offset_top = 3.0
 offset_right = -5.0
@@ -700,6 +708,7 @@ text = "3"
 
 [node name="Label" type="Label" parent="CanonButton"]
 visible = false
+layout_mode = 0
 offset_left = -116.0
 offset_right = -1.0
 offset_bottom = 35.0
@@ -736,6 +745,7 @@ text = "1"
 
 [node name="Label" type="Label" parent="RangeDmgButton"]
 visible = false
+layout_mode = 0
 offset_left = -116.0
 offset_right = -1.0
 offset_bottom = 16.0
@@ -772,6 +782,7 @@ text = "1"
 
 [node name="Label" type="Label" parent="RaftHealthButton"]
 visible = false
+layout_mode = 0
 offset_left = -116.0
 offset_right = -1.0
 offset_bottom = 16.0

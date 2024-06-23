@@ -27,6 +27,7 @@ func fish_killed():
 	if fishes_alive == 0:
 		waves_completed += 1
 		await get_tree().create_timer(max(15.0 - waves_completed * 0.1, 3.0)).timeout
+		while get_tree().paused: await get_tree().create_timer(3.0).timeout
 		spawn_wave() 
 
 func spawn_junk():
@@ -44,7 +45,7 @@ func spawn_junk():
 			main.add_child(instance)
 			instance.global_position = Vector2(randi_range(330, 360), randi_range(30, 150))
 			await get_tree().create_timer(randf_range(3.0, 6.0)).timeout
-	
+			while get_tree().paused: await get_tree().create_timer(1.0).timeout
 
 func spawn_wave():
 	var main = get_tree().get_first_node_in_group("SCENE_main")
@@ -79,6 +80,7 @@ func load_game_screen():
 	extra_raft_health = 0
 	spawn_junk()
 	await get_tree().create_timer(5.0).timeout 
+	while get_tree().paused: await get_tree().create_timer(1.0).timeout
 	spawn_wave()
 
 func load_game_over():
@@ -87,4 +89,3 @@ func load_game_over():
 
 func _ready():
 	Engine.max_fps = 30
-	
