@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_41mth")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 17.0
 }, {
@@ -129,7 +129,9 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_2fjvt")
-animation = &"swim"
+animation = &"attack"
+frame = 7
+frame_progress = 1.0
 
 [node name="HealthBar" type="ProgressBar" parent="."]
 offset_left = -9.0

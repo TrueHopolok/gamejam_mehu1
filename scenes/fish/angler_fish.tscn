@@ -1,0 +1,151 @@
+[gd_scene load_steps=20 format=3 uid="uid://baieqone11fbu"]
+
+[ext_resource type="Script" path="res://scripts/fish/fish.gd" id="1_vt2so"]
+[ext_resource type="Texture2D" uid="uid://cabxefchgaxnn" path="res://textures/fish/angler_fish_attack.png" id="2_c3vul"]
+[ext_resource type="Texture2D" uid="uid://ba8aledh42os3" path="res://textures/fish/angler_fish_swim.png" id="3_d5em4"]
+[ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="4_d4t2s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mca4b"]
+size = Vector2(34, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fds8"]
+size = Vector2(24, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pfvp"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sx44u"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh5gv"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idrq7"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1k5y"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pb2ct"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egi2l"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mequ"]
+atlas = ExtResource("2_c3vul")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qube5"]
+atlas = ExtResource("3_d5em4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a075w"]
+atlas = ExtResource("3_d5em4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yu7pn"]
+atlas = ExtResource("3_d5em4")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g6qw"]
+atlas = ExtResource("3_d5em4")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2fjvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pfvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sx44u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh5gv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idrq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1k5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pb2ct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egi2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mequ")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qube5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a075w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yu7pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g6qw")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 3.0
+}]
+
+[node name="FishAngler" type="Node2D" groups=["ENTITY_enemy"]]
+z_index = 1
+script = ExtResource("1_vt2so")
+max_health = 12.0
+hp_increase = 2.0
+min_distance = 16.0
+speed = 0.7
+prize = Array[int]([0, 1, 0, 2])
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+position = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_mca4b")
+
+[node name="DmgArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="DmgBox" type="CollisionShape2D" parent="DmgArea"]
+position = Vector2(6, 1)
+shape = SubResource("RectangleShape2D_4fds8")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+rotation = 3.14159
+scale = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_2fjvt")
+animation = &"attack"
+frame = 7
+frame_progress = 1.0
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -9.0
+offset_top = -18.0
+offset_right = 9.0
+offset_bottom = -14.0
+theme = ExtResource("4_d4t2s")
+value = 100.0
+show_percentage = false

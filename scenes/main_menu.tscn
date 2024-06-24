@@ -63,7 +63,7 @@ offset_bottom = 176.0
 theme = ExtResource("2_8d82o")
 theme_override_font_sizes/font_size = 0
 text = "WASD or Arrows to move;
-SPACE to attack;
+Hold SPACE to attack;
 SHIFT or CTRL to build;
 ESC to pause;
 Use mouse to interact with UI;

@@ -1,0 +1,121 @@
+[gd_scene load_steps=16 format=3 uid="uid://co2hdjtyruyc1"]
+
+[ext_resource type="Script" path="res://scripts/fish/fuga_fish.gd" id="1_ajiwm"]
+[ext_resource type="Texture2D" uid="uid://dilmwbvjymxlm" path="res://textures/fish/fugu_fish_attack.png" id="2_wkkwv"]
+[ext_resource type="Texture2D" uid="uid://sbm38edienf4" path="res://textures/fish/fugu_swim.png" id="3_awnwr"]
+[ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="4_r5nvw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mca4b"]
+size = Vector2(42, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fds8"]
+size = Vector2(42, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wafuw"]
+atlas = ExtResource("2_wkkwv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f13hq"]
+atlas = ExtResource("2_wkkwv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_finnx"]
+atlas = ExtResource("2_wkkwv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3pvmm"]
+atlas = ExtResource("2_wkkwv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xff2q"]
+atlas = ExtResource("3_awnwr")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eapp4"]
+atlas = ExtResource("3_awnwr")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kepq"]
+atlas = ExtResource("3_awnwr")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22ndv"]
+atlas = ExtResource("3_awnwr")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2fjvt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wafuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f13hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_finnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3pvmm")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xff2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eapp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kepq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22ndv")
+}],
+"loop": true,
+"name": &"swim",
+"speed": 2.0
+}]
+
+[node name="FugaFish" type="Node2D" groups=["ENTITY_enemy"]]
+z_index = -1
+script = ExtResource("1_ajiwm")
+max_health = 3.0
+hp_increase = 1.3
+damage = 0.3
+dmg_increase = 1.05
+min_distance = 5.0
+speed = 0.5
+prize = Array[int]([0, 1, 0, 1])
+
+[node name="HurtArea" type="Area2D" parent="."]
+
+[node name="HurtBox" type="CollisionShape2D" parent="HurtArea"]
+scale = Vector2(0.4, 0.4)
+shape = SubResource("RectangleShape2D_mca4b")
+
+[node name="DmgArea" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="DmgBox" type="CollisionShape2D" parent="DmgArea"]
+shape = SubResource("RectangleShape2D_4fds8")
+disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_2fjvt")
+animation = &"swim"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -9.0
+offset_top = -12.0
+offset_right = 9.0
+offset_bottom = -8.0
+theme = ExtResource("4_r5nvw")
+value = 100.0
+show_percentage = false
