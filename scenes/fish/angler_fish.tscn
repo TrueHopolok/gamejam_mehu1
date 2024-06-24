@@ -115,7 +115,7 @@ max_health = 12.0
 hp_increase = 2.0
 min_distance = 16.0
 speed = 0.7
-prize = Array[int]([0, 1, 0, 2])
+prize = Array[int]([0, 1, 0, 1])
 
 [node name="HurtArea" type="Area2D" parent="."]
 
