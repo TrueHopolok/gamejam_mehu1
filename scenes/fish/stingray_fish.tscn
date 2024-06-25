@@ -136,7 +136,7 @@ animations = [{
 }]
 
 [node name="StingrayFish" type="Node2D" groups=["ENTITY_enemy"]]
-z_index = 1
+z_index = 2
 script = ExtResource("1_wvym2")
 max_health = 6.0
 damage = 0.2

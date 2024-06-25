@@ -109,7 +109,7 @@ animations = [{
 }]
 
 [node name="SwordFish" type="Node2D" groups=["ENTITY_enemy"]]
-z_index = 1
+z_index = 2
 script = ExtResource("1_n0swa")
 damage = 2.0
 dmg_increase = 1.5

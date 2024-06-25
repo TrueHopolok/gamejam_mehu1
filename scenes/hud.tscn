@@ -551,7 +551,7 @@ texture_pressed = ExtResource("31_dotcu")
 texture_hover = ExtResource("32_eciyb")
 script = ExtResource("7_3x7ck")
 placeable_id = 1
-cost = Array[int]([3, 2, 0])
+cost = Array[int]([3, 1, 0])
 
 [node name="CostLabel" type="Label" parent="LogsButton"]
 layout_mode = 0
@@ -573,7 +573,7 @@ offset_bottom = -46.0
 theme = ExtResource("2_6foxy")
 theme_override_colors/font_color = Color(0.819608, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-text = "2"
+text = "1"
 
 [node name="CostLabel3" type="Label" parent="LogsButton"]
 layout_mode = 0

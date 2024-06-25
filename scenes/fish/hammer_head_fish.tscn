@@ -109,7 +109,7 @@ animations = [{
 }]
 
 [node name="HammerHeadFish" type="Node2D" groups=["ENTITY_enemy"]]
-z_index = 1
+z_index = 2
 script = ExtResource("1_rd5bn")
 max_health = 8.0
 damage = 1.5

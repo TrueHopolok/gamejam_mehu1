@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://8rnooayg0lf3"]
+[gd_scene load_steps=16 format=3 uid="uid://8rnooayg0lf3"]
 
 [ext_resource type="AudioStream" uid="uid://op0yjykblds7" path="res://sounds/Damage.wav" id="1_bnoff"]
 [ext_resource type="AudioStream" uid="uid://7bfyggglbhbd" path="res://sounds/Next_wave.wav" id="2_p4a8w"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://vltd82locog2" path="res://scenes/pause_menu.tscn" id="9_ky67f"]
 [ext_resource type="PackedScene" uid="uid://cpoadx82jcpl2" path="res://scenes/end_screen.tscn" id="9_su3p7"]
 [ext_resource type="PackedScene" uid="uid://b1n5oa70kpeor" path="res://scenes/mute_button.tscn" id="11_0s4ig"]
+[ext_resource type="PackedScene" uid="uid://ktcixba1ihw7" path="res://scenes/tutorial.tscn" id="14_haaiy"]
 
 [node name="Main" type="Node2D" groups=["SCENE_main"]]
 
@@ -104,11 +105,13 @@ limit_smoothed = true
 position_smoothing_enabled = true
 editor_draw_limits = true
 
-[node name="RaftPlanks" parent="." instance=ExtResource("6_mgc4w")]
-position = Vector2(146, 86)
-
 [node name="EndScreen" parent="." instance=ExtResource("9_su3p7")]
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("9_ky67f")]
 visible = false
+
+[node name="Tutorial" parent="." instance=ExtResource("14_haaiy")]
+
+[node name="RaftPlanks" parent="." instance=ExtResource("6_mgc4w")]
+position = Vector2(146, 86)

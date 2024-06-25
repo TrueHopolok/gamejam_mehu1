@@ -38,6 +38,20 @@ func fish_killed():
 	fishes_alive -= 1
 	if fishes_alive == 0:
 		waves_completed += 1
+		var tutorial_index = -1
+		if waves_completed == 1:
+			tutorial_index = 4
+		elif waves_completed == 4:
+			tutorial_index = 5
+		elif waves_completed == 25:
+			tutorial_index = 6
+		if tutorial_index != -1:
+			var tutorial_label : Label = get_tree().get_first_node_in_group("SCENE_tutorial").get_child(tutorial_index)
+			if tutorial_label != null:
+				tutorial_label.visible = true
+				await get_tree().create_timer(5.0).timeout
+				while get_tree().paused: await get_tree().create_timer(1.0).timeout
+				tutorial_label.visible = false
 		await get_tree().create_timer(max(15.0 - waves_completed * 0.1, 3.0)).timeout
 		while get_tree().paused: await get_tree().create_timer(3.0).timeout
 		spawn_wave() 
@@ -101,6 +115,14 @@ func spawn_wave():
 		else: instance.global_position.x = randi_range(330, 360)
 		instance.global_position.y = randi_range(30, 150)
 		instance.died.connect(fish_killed)
+		
+	if waves_completed == 0:
+		var tutorial_label : Label = get_tree().get_first_node_in_group("SCENE_tutorial").get_child(3)
+		if tutorial_label != null:
+			tutorial_label.visible = true
+			await get_tree().create_timer(5.0).timeout
+			while get_tree().paused: await get_tree().create_timer(1.0).timeout
+			tutorial_label.visible = false
 
 func load_game_screen():
 	get_tree().get_root().get_child(1).queue_free()
@@ -117,6 +139,13 @@ func load_game_screen():
 	extra_projectile_damage = 0
 	extra_raft_health = 0
 	spawn_junk()
+	for i in 3:
+		var tutorial_label : Label = get_tree().get_first_node_in_group("SCENE_tutorial").get_child(i)
+		if tutorial_label != null:
+			tutorial_label.visible = true
+			await get_tree().create_timer(5.0).timeout
+			while get_tree().paused: await get_tree().create_timer(1.0).timeout
+			tutorial_label.visible = false
 	await get_tree().create_timer(5.0).timeout 
 	while get_tree().paused: await get_tree().create_timer(1.0).timeout
 	spawn_wave()

@@ -433,8 +433,9 @@ border_color = Color(0.831373, 0.588235, 0, 1)
 border_blend = true
 
 [node name="Player" type="Node2D" groups=["ENTITY_allies", "Player"]]
+z_index = 3
 script = ExtResource("1_v4qo1")
-attack_reload = 10
+attack_reload = 9
 placeables = Array[PackedScene]([ExtResource("2_yrv08"), ExtResource("3_p8g48"), ExtResource("4_7sefx"), ExtResource("5_gks2k")])
 place_costs = Array[Array]([[2], [3, 2], [0, 1, 3], [2, 2, 3]])
 min_place_distance = 900.0

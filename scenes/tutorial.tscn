@@ -1,0 +1,92 @@
+[gd_scene load_steps=2 format=3 uid="uid://ktcixba1ihw7"]
+
+[ext_resource type="Theme" uid="uid://btp17lophm3xe" path="res://others/maintheme.tres" id="1_216hx"]
+
+[node name="Tutorial" type="CanvasLayer" groups=["SCENE_tutorial"]]
+
+[node name="Tutorial-0" type="Label" parent="."]
+visible = false
+offset_left = 56.0
+offset_top = 50.0
+offset_right = 240.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "WASD to move
+Be careful not to drown"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial-1" type="Label" parent="."]
+visible = false
+offset_left = 63.0
+offset_top = 50.0
+offset_right = 231.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "Collect junk to build
+or to craft weapons"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial-2" type="Label" parent="."]
+visible = false
+offset_left = 63.0
+offset_top = 50.0
+offset_right = 231.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "Click SHIFT or CTRL to build"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial-3" type="Label" parent="."]
+visible = false
+offset_left = 61.0
+offset_top = 50.0
+offset_right = 237.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "Be careful of the fish
+Hold SPACE to attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tutorial-4" type="Label" parent="."]
+visible = false
+offset_left = 73.0
+offset_top = 50.0
+offset_right = 217.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "With earned fish
+upgrade your stats"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial-5" type="Label" parent="."]
+visible = false
+offset_left = 67.0
+offset_top = 50.0
+offset_right = 219.0
+offset_bottom = 73.0
+theme = ExtResource("1_216hx")
+text = "Every 5th wave new fish will appear"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial-6" type="Label" parent="."]
+visible = false
+offset_left = 60.0
+offset_top = 49.0
+offset_right = 236.0
+offset_bottom = 72.0
+theme = ExtResource("1_216hx")
+text = "From now on fish can spawn on both sides :("
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

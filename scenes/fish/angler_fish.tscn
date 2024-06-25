@@ -109,7 +109,7 @@ animations = [{
 }]
 
 [node name="FishAngler" type="Node2D" groups=["ENTITY_enemy"]]
-z_index = 1
+z_index = 2
 script = ExtResource("1_vt2so")
 max_health = 12.0
 hp_increase = 2.0
